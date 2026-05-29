@@ -65,7 +65,7 @@
     .btn-outline { background: transparent; color: var(--text-sub); border: 1px solid var(--border); }
     .btn-outline:hover { border-color: var(--text-dim); color: var(--text); }
 
-    .interests { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem 2rem; display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap; }
+    .interests { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem 1.2rem; display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap; }
     .interests-label { font-family: var(--mono); font-size: 0.64rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-dim); margin-right: 0.3rem; }
     .tag { font-size: 0.73rem; font-weight: 500; padding: 0.28rem 0.65rem; border-radius: 100px; }
     .tag-accent { background: var(--accent-soft); color: var(--accent); }
@@ -74,14 +74,14 @@
     .tag-violet { background: var(--violet-soft); color: var(--violet); }
     .tag-amber { background: var(--amber-soft); color: var(--amber); }
 
-    section { max-width: 1000px; margin: 0 auto; padding: 3rem 2.5rem; }
+    section { max-width: 1000px; margin: 0 auto; padding: 2rem 2.5rem; }
     section + section { border-top: 1px solid var(--border); }
-    .section-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.8rem; }
+    .section-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.2rem; }
     .section-head h2 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; }
     .section-head .count { font-family: var(--mono); font-size: 0.68rem; color: var(--text-dim); }
     .section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-    .list-item { display: grid; grid-template-columns: 140px 1fr; gap: 2rem; padding: 1.2rem 0; }
+    .list-item { display: grid; grid-template-columns: 140px 1fr; gap: 2rem; padding: 0.9rem 0; }
     .list-item + .list-item { border-top: 1px solid var(--border); }
     .list-year { font-family: var(--mono); font-size: 0.74rem; color: var(--text-dim); padding-top: 0.15rem; }
     .list-title { font-weight: 600; font-size: 0.93rem; margin-bottom: 0.1rem; }
@@ -91,7 +91,7 @@
     .simple-item + .simple-item { border-top: 1px solid var(--border); }
     .simple-item strong { color: var(--text); font-weight: 600; }
 
-    .group-label { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.3rem 0.6rem; border-radius: 4px; display: inline-block; margin-bottom: 0.8rem; margin-top: 1.5rem; }
+    .group-label { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.3rem 0.6rem; border-radius: 4px; display: inline-block; margin-bottom: 0.6rem; margin-top: 1.2rem; }
     .group-label:first-of-type { margin-top: 0; }
     .group-label.sci { background: var(--accent-soft); color: var(--accent); }
     .group-label.scopus { background: var(--violet-soft); color: var(--violet); }
@@ -105,7 +105,7 @@
     .group-label.review { background: var(--violet-soft); color: var(--violet); }
 
     /* PUB FILTERS */
-    .pub-filters { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.8rem; }
+    .pub-filters { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.2rem; }
     .pub-filters.horizontal { flex-direction: row; flex-wrap: wrap; gap: 0.4rem; }
     .pub-filter-btn { font-family: var(--sans); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.01em; padding: 0.75rem 1.2rem; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--text-sub); cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: space-between; width: 100%; text-align: left; gap: 0.6rem; }
     .pub-filter-btn:hover { border-color: var(--text-dim); color: var(--text); }
@@ -126,7 +126,7 @@
     .pub-group.open { display: block; animation: slideDown 0.35s ease; }
     @keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
 
-    .pub-item { padding: 1.1rem 0; }
+    .pub-item { padding: 0.85rem 0; }
     .pub-item + .pub-item { border-top: 1px solid var(--border); }
     .pub-title { font-weight: 500; font-size: 0.9rem; line-height: 1.55; margin-bottom: 0.2rem; }
     .pub-authors { font-size: 0.82rem; color: var(--text-sub); }
@@ -141,7 +141,7 @@
     .proj-name { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.15rem; line-height: 1.5; }
     .proj-meta { font-size: 0.76rem; color: var(--text-dim); }
 
-    .award-item { display: flex; gap: 1rem; padding: 1rem 0; align-items: start; }
+    .award-item { display: flex; gap: 1rem; padding: 0.75rem 0; align-items: start; }
     .award-item + .award-item { border-top: 1px solid var(--border); }
     .award-yr { font-family: var(--mono); font-size: 0.66rem; font-weight: 500; padding: 0.2rem 0.45rem; border-radius: 4px; flex-shrink: 0; margin-top: 0.1rem; background: var(--slate-soft); color: var(--slate); }
     .award-name { font-weight: 500; font-size: 0.88rem; line-height: 1.5; }
@@ -155,8 +155,9 @@
     .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
     .news-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: border-color 0.2s; display: flex; flex-direction: column; text-decoration: none; }
     .news-card:hover { border-color: #ccc; }
-    .news-card-thumb { height: 130px; background: linear-gradient(135deg, #EDEBE6 0%, #E2DFD8 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-    .news-card-thumb .source-badge { position: absolute; top: 0.6rem; left: 0.6rem; font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; padding: 0.2rem 0.5rem; border-radius: 4px; background: rgba(255,255,255,0.9); color: var(--text-sub); }
+    .news-card-thumb { height: 140px; background: #EDEBE6; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .news-card-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .news-card-thumb .source-badge { position: absolute; top: 0.6rem; left: 0.6rem; font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; padding: 0.2rem 0.5rem; border-radius: 4px; background: rgba(255,255,255,0.92); color: var(--text-sub); backdrop-filter: blur(4px); z-index: 1; }
     .news-card-thumb .news-icon { font-size: 1.8rem; opacity: 0.15; }
     .news-card-body { padding: 1rem; flex: 1; display: flex; flex-direction: column; }
     .news-card-title { font-size: 0.82rem; font-weight: 500; color: var(--text); line-height: 1.5; margin-bottom: 0.4rem; flex: 1; }
@@ -487,7 +488,7 @@
     <div class="proj-meta">MSIT, IITP · 2024.06 — 2026.12</div>
   </div>
 
-  <button class="pub-filter-btn completed" style="margin-top:1.5rem; width:auto;" onclick="toggleCompleted(this)">
+  <button class="pub-filter-btn completed" style="margin-top:1rem; width:auto;" onclick="toggleCompleted(this)">
     Completed Projects <span class="num">8</span>
   </button>
 
@@ -589,14 +590,14 @@
   <div class="group-label sci">Teaching</div>
   <div class="list-item reveal"><span class="list-year">Spring 2025, 2026</span><div><div class="list-title">Network Security [LB001500]</div><div class="list-sub">Sungshin Women's University, Seoul</div></div></div>
 
-  <div class="group-label conf" style="margin-top:2rem;">Work</div>
+  <div class="group-label conf" style="margin-top:1.2rem;">Work</div>
   <div class="list-item reveal"><span class="list-year">2024.03 — 08</span><div><div class="list-title">Research Assistant (RA)</div><div class="list-sub">Dept. of Convergence Security Engineering, Sungshin University</div></div></div>
   <div class="list-item reveal"><span class="list-year">2024.01</span><div><div class="list-title">Internship</div><div class="list-sub">Newracom, California, United States</div></div></div>
   <div class="list-item reveal"><span class="list-year">2023.09 — 2024.02</span><div><div class="list-title">Teaching Assistant (TA)</div><div class="list-sub">Dept. of Convergence Security Engineering, Sungshin University</div></div></div>
   <div class="list-item reveal"><span class="list-year">2021.09 — 2022.09</span><div><div class="list-title">Teaching Assistant (TA)</div><div class="list-sub">Dept. of Convergence Security Engineering, Sungshin University</div></div></div>
   <div class="list-item reveal"><span class="list-year">2019.03 — 2020.09</span><div><div class="list-title">Undergraduate Internship</div><div class="list-sub">CSE Lab, Sungshin University</div></div></div>
 
-  <div class="group-label scopus" style="margin-top:1.5rem;">Professional Activities</div>
+  <div class="group-label scopus" style="margin-top:1rem;">Professional Activities</div>
   <div class="list-item reveal"><span class="list-year">2023.03 —</span><div><div class="list-title">IEEE 802.11 Forum KR Member</div></div></div>
   <div class="list-item reveal"><span class="list-year">2023.09 — 2024.08</span><div><div class="list-title">Lab Leader</div><div class="list-sub">CSE Lab, Dept. of Future Convergence Technology Engineering</div></div></div>
   <div class="list-item reveal"><span class="list-year">2022.07</span><div><div class="list-title">Digital Forensics Summer Short-term Education</div><div class="list-sub">MIN ENI Inc</div></div></div>
@@ -606,8 +607,8 @@
   <div class="list-item reveal"><span class="list-year">2019.06 — 2020.09</span><div><div class="list-title">ConSeQ Club — PR Team Leader</div><div class="list-sub">Sungshin University</div></div></div>
   <div class="list-item reveal"><span class="list-year">2019.03 — 04</span><div><div class="list-title">Java Book Beta Reader</div><div class="list-sub">Hanbit Academy — '혼자 공부하는 자바'</div></div></div>
 
-  <div class="group-label amber" style="margin-top:2rem;">Invited Talks</div>
-  <div class="simple-item reveal">Symposium Speaker — Digital Identity Management System for IoT Devices<br><span class="ko">2025년도 디지털치료학회 춘계학술대회 심포지엄 연사 발표 (2025.06.13)</span></div>
+  <div class="group-label amber" style="margin-top:1rem;">Invited Talks</div>
+  <div class="list-item reveal"><span class="list-year">2025.06</span><div><div class="list-title">Symposium Speaker — Digital Identity Management System for IoT Devices</div><div class="list-sub">2025 Spring Conference of the Korean Digital Therapeutics Society</div><span class="ko">디지털치료학회 춘계학술대회 심포지엄 연사 발표</span></div></div>
 </section>
 
 <!-- AWARDS -->
@@ -683,55 +684,55 @@
   <div class="section-head"><h2>News</h2></div>
   <div class="news-grid">
     <a class="news-card reveal" href="https://www.sungshin.ac.kr/main_kor/14091/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTQwNjQ2JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">
-      <div class="news-card-thumb" style="background:linear-gradient(135deg,#E8D5C4,#D4C0AE);"><span class="source-badge">Sungshin Univ.</span><span class="news-icon">📰</span></div>
+      <div class="news-card-thumb" style="background:#E8E4DC;"><span class="source-badge">Sungshin Univ.</span><span class="news-icon">📄</span></div>
       <div class="news-card-body"><div class="news-card-title">Research team publishes consecutive SCIE-level papers</div><div class="news-card-date">2025.03</div></div>
     </a>
     <a class="news-card reveal" href="https://v.daum.net/v/20240619073246709" target="_blank">
-      <div class="news-card-thumb" style="background:linear-gradient(135deg,#C4D4E8,#AEBFD4);"><span class="source-badge">Daum News</span><span class="news-icon">📰</span></div>
+      <div class="news-card-thumb"><span class="source-badge">전자신문</span><img src="https://img1.daumcdn.net/thumb/S1200x630/?fname=https://t1.daumcdn.net/news/202406/19/etimesi/20240619073248072pgiw.jpg" alt=""></div>
       <div class="news-card-body"><div class="news-card-title">Graduate student publishes papers in 3 renowned SCIE-level journals</div><div class="news-card-date">2024.06</div></div>
     </a>
     <a class="news-card reveal" href="https://v.daum.net/v/20240607184602892" target="_blank">
-      <div class="news-card-thumb" style="background:linear-gradient(135deg,#C4D4E8,#AEBFD4);"><span class="source-badge">Daum News</span><span class="news-icon">🏆</span></div>
+      <div class="news-card-thumb"><span class="source-badge">전자신문</span><img src="https://img1.daumcdn.net/thumb/S1200x630/?fname=https://t1.daumcdn.net/news/202406/07/etimesi/20240607184605353hahf.jpg" alt=""></div>
       <div class="news-card-body"><div class="news-card-title">Research team won the most awards at ASK 2024</div><div class="news-card-date">2024.06</div></div>
     </a>
     <a class="news-card reveal" href="https://www.hani.co.kr/arti/economy/biznews/1138985.html" target="_blank">
-      <div class="news-card-thumb" style="background:linear-gradient(135deg,#D4E8C4,#BED4AE);"><span class="source-badge">Hankyoreh</span><span class="news-icon">🏅</span></div>
+      <div class="news-card-thumb" style="background:#DDE6D5;"><span class="source-badge">한겨레</span><span class="news-icon">🏅</span></div>
       <div class="news-card-body"><div class="news-card-title">Sun-Jin Lee won Outstanding Young Researcher Award at NetSec KR 2024</div><div class="news-card-date">2024</div></div>
     </a>
     <a class="news-card reveal" href="https://www.metroseoul.co.kr/article/20230410500084" target="_blank">
-      <div class="news-card-thumb" style="background:linear-gradient(135deg,#E8C4D4,#D4AEBE);"><span class="source-badge">Metro Seoul</span><span class="news-icon">👩‍🔬</span></div>
+      <div class="news-card-thumb" style="background:#E0D8E8;"><span class="source-badge">메트로신문</span><span class="news-icon">👩‍🔬</span></div>
       <div class="news-card-body"><div class="news-card-title">Sungshin Univ. selected 6 teams for Female Graduate Students Engineering Research Team</div><div class="news-card-date">2023.04</div></div>
     </a>
     <a class="news-card reveal" href="https://www.sungshin.ac.kr/main_kor/10941/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTE4ODE3JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">
-      <div class="news-card-thumb" style="background:linear-gradient(135deg,#E8D5C4,#D4C0AE);"><span class="source-badge">Sungshin Univ.</span><span class="news-icon">📄</span></div>
+      <div class="news-card-thumb" style="background:#E8E4DC;"><span class="source-badge">Sungshin Univ.</span><span class="news-icon">📄</span></div>
       <div class="news-card-body"><div class="news-card-title">Graduate students publish papers in SCI-level international journals</div><div class="news-card-date">2023.03</div></div>
     </a>
     <a class="news-card reveal" href="https://www.sungshin.ac.kr/main_kor/10941/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTE4ODE2JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">
-      <div class="news-card-thumb" style="background:linear-gradient(135deg,#E8D5C4,#D4C0AE);"><span class="source-badge">Sungshin Univ.</span><span class="news-icon">📄</span></div>
+      <div class="news-card-thumb" style="background:#E8E4DC;"><span class="source-badge">Sungshin Univ.</span><span class="news-icon">📄</span></div>
       <div class="news-card-body"><div class="news-card-title">Research team publishes in JCR Top 18% SCI journal</div><div class="news-card-date">2023.03</div></div>
     </a>
     <a class="news-card reveal" href="https://www.sungshin.ac.kr/main_kor/10941/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTE4ODE1JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">
-      <div class="news-card-thumb" style="background:linear-gradient(135deg,#E8D5C4,#D4C0AE);"><span class="source-badge">Sungshin Univ.</span><span class="news-icon">📄</span></div>
+      <div class="news-card-thumb" style="background:#E8E4DC;"><span class="source-badge">Sungshin Univ.</span><span class="news-icon">📄</span></div>
       <div class="news-card-body"><div class="news-card-title">Paper published in Computer Networks, Q1 SCI journal</div><div class="news-card-date">2023.03</div></div>
     </a>
     <a class="news-card reveal" href="https://www.sungshin.ac.kr/main_kor/14091/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTE2MzQ3JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">
-      <div class="news-card-thumb" style="background:linear-gradient(135deg,#E8D5C4,#D4C0AE);"><span class="source-badge">Sungshin Univ.</span><span class="news-icon">🏆</span></div>
+      <div class="news-card-thumb" style="background:#E8E4DC;"><span class="source-badge">Sungshin Univ.</span><span class="news-icon">🏆</span></div>
       <div class="news-card-body"><div class="news-card-title">Best Student Paper Award at 6th Mobisec</div><div class="news-card-date">2022.12</div></div>
     </a>
     <a class="news-card reveal" href="https://www.sungshin.ac.kr/cse/11789/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGY3NlJTJGMzQwNyUyRjExMzA3MSUyRmFydGNsVmlldy5kbyUzRg==" target="_blank">
-      <div class="news-card-thumb" style="background:linear-gradient(135deg,#E8D5C4,#D4C0AE);"><span class="source-badge">Sungshin CSE</span><span class="news-icon">🏅</span></div>
+      <div class="news-card-thumb" style="background:#E8E4DC;"><span class="source-badge">Sungshin CSE</span><span class="news-icon">🏅</span></div>
       <div class="news-card-body"><div class="news-card-title">Best Poster Paper Award at international conference</div><div class="news-card-date">2022.09</div></div>
     </a>
     <a class="news-card reveal" href="https://www.sungshin.ac.kr/main_kor/14091/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTA2Mzk4JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">
-      <div class="news-card-thumb" style="background:linear-gradient(135deg,#E8D5C4,#D4C0AE);"><span class="source-badge">Sungshin Univ.</span><span class="news-icon">🏆</span></div>
+      <div class="news-card-thumb" style="background:#E8E4DC;"><span class="source-badge">Sungshin Univ.</span><span class="news-icon">🏆</span></div>
       <div class="news-card-body"><div class="news-card-title">Grand Award and three Bronze Awards in 2021 Industrial Security Contest</div><div class="news-card-date">2021.11</div></div>
     </a>
     <a class="news-card reveal" href="https://www.boannews.com/media/view.asp?idx=99892" target="_blank">
-      <div class="news-card-thumb" style="background:linear-gradient(135deg,#C4C8E8,#AEB2D4);"><span class="source-badge">BoanNews</span><span class="news-icon">📰</span></div>
+      <div class="news-card-thumb"><span class="source-badge">보안뉴스</span><img src="http://www.boannews.com/media/upFiles2/2021/08/606973748_751.jpg" alt=""></div>
       <div class="news-card-body"><div class="news-card-title">Best Paper Award at KAIS/KAF Joint Conference</div><div class="news-card-date">2021.08</div></div>
     </a>
     <a class="news-card reveal" href="https://www.hankookilbo.com/News/Read/201909041525028164" target="_blank">
-      <div class="news-card-thumb" style="background:linear-gradient(135deg,#D8E8C4,#C2D4AE);"><span class="source-badge">Hankook Ilbo</span><span class="news-icon">🏅</span></div>
+      <div class="news-card-thumb"><span class="source-badge">한국일보</span><img src="https://newsimg.hankookilbo.com/2019/09/04/201909041525028164_1.jpg" alt=""></div>
       <div class="news-card-body"><div class="news-card-title">Patent Search team won Encouragement Award and Grand Prize</div><div class="news-card-date">2019.09</div></div>
     </a>
   </div>
