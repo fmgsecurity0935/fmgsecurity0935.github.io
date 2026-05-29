@@ -106,9 +106,11 @@
 
     /* PUB FILTERS */
     .pub-filters { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2.5rem; }
-    .pub-filter-btn { font-family: var(--mono); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.02em; padding: 0.75rem 1.2rem; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--text-sub); cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: space-between; width: 100%; text-align: left; }
+    .pub-filters.horizontal { flex-direction: row; flex-wrap: wrap; gap: 0.4rem; }
+    .pub-filter-btn { font-family: var(--sans); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.01em; padding: 0.75rem 1.2rem; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--text-sub); cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: space-between; width: 100%; text-align: left; gap: 0.6rem; }
     .pub-filter-btn:hover { border-color: var(--text-dim); color: var(--text); }
-    .pub-filter-btn .num { font-weight: 400; color: var(--text-dim); font-size: 0.75rem; }
+    .pub-filter-btn .num { font-family: var(--mono); font-weight: 400; color: var(--text-dim); font-size: 0.72rem; }
+    .pub-filters.horizontal .pub-filter-btn { width: auto; padding: 0.45rem 0.85rem; font-size: 0.78rem; border-radius: 100px; justify-content: center; }
     .pub-filter-btn.active.sci { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
     .pub-filter-btn.active.scopus { background: var(--violet-soft); border-color: var(--violet); color: var(--violet); }
     .pub-filter-btn.active.kci { background: var(--amber-soft); border-color: var(--amber); color: var(--amber); }
@@ -603,14 +605,14 @@
 <section id="awards">
   <div class="section-head"><h2>Awards</h2></div>
 
-  <div class="pub-filters">
-    <button class="pub-filter-btn accent" data-target="aw2024" onclick="toggleAward(this)">2024 <span class="num">7</span></button>
-    <button class="pub-filter-btn accent" data-target="aw2023" onclick="toggleAward(this)">2023 <span class="num">4</span></button>
-    <button class="pub-filter-btn accent" data-target="aw2022" onclick="toggleAward(this)">2022 <span class="num">2</span></button>
-    <button class="pub-filter-btn accent" data-target="aw2021" onclick="toggleAward(this)">2021 <span class="num">6</span></button>
-    <button class="pub-filter-btn accent" data-target="aw2020" onclick="toggleAward(this)">2020 <span class="num">3</span></button>
-    <button class="pub-filter-btn accent" data-target="aw2019" onclick="toggleAward(this)">2019 <span class="num">7</span></button>
-    <button class="pub-filter-btn accent" data-target="aw2018" onclick="toggleAward(this)">2018 <span class="num">3</span></button>
+  <div class="pub-filters horizontal">
+    <button class="pub-filter-btn accent" data-target="aw2024" onclick="toggleAward(this)">2024</button>
+    <button class="pub-filter-btn accent" data-target="aw2023" onclick="toggleAward(this)">2023</button>
+    <button class="pub-filter-btn accent" data-target="aw2022" onclick="toggleAward(this)">2022</button>
+    <button class="pub-filter-btn accent" data-target="aw2021" onclick="toggleAward(this)">2021</button>
+    <button class="pub-filter-btn accent" data-target="aw2020" onclick="toggleAward(this)">2020</button>
+    <button class="pub-filter-btn accent" data-target="aw2019" onclick="toggleAward(this)">2019</button>
+    <button class="pub-filter-btn accent" data-target="aw2018" onclick="toggleAward(this)">2018</button>
   </div>
 
   <div class="pub-group" data-award="aw2024">
