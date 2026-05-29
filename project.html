@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sun-Jin Lee — Projects</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #FAFAF7;
+      --surface: #FFFFFF;
+      --text: #1C1917;
+      --text-sub: #57534E;
+      --text-dim: #A8A29E;
+      --accent: #C2410C;
+      --accent-soft: rgba(194, 65, 12, 0.07);
+      --teal: #0F766E;
+      --teal-soft: rgba(15, 118, 110, 0.07);
+      --slate: #475569;
+      --slate-soft: rgba(71, 85, 105, 0.07);
+      --violet: #6D28D9;
+      --violet-soft: rgba(109, 40, 217, 0.06);
+      --border: #E7E5E0;
+      --sans: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono: 'IBM Plex Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--accent); color: #fff; }
+
+    .ko { display: block; font-size: 0.78rem; color: var(--text-dim); margin-top: 0.2rem; line-height: 1.5; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,250,247,0.88); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .logo { font-size: 1rem; font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+    nav ul { list-style: none; display: flex; gap: 1.4rem; }
+    nav a { text-decoration: none; font-size: 0.76rem; font-weight: 400; color: var(--text-sub); transition: color 0.2s; }
+    nav ul a:hover { color: var(--accent); }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+    .nav-toggle span { display: block; width: 20px; height: 1.5px; background: var(--text); margin: 4.5px 0; }
+
+    .page-header { max-width: 1000px; margin: 0 auto; padding: 7rem 2.5rem 2rem; }
+    .page-header h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+    .page-header p { font-size: 0.92rem; color: var(--text-sub); max-width: 560px; }
+    .back-link { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.78rem; color: var(--text-dim); text-decoration: none; margin-bottom: 1.5rem; transition: color 0.2s; }
+    .back-link:hover { color: var(--accent); }
+
+    section { max-width: 1000px; margin: 0 auto; padding: 2rem 2.5rem; }
+    section + section { border-top: 1px solid var(--border); }
+
+    .project-entry { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; margin-bottom: 1.2rem; }
+    .project-entry:hover { border-color: #ccc; }
+    .project-entry-label { display: inline-block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.8rem; }
+    .project-entry-label.security { background: var(--accent-soft); color: var(--accent); }
+    .project-entry-label.network { background: var(--teal-soft); color: var(--teal); }
+    .project-entry-label.ai { background: var(--violet-soft); color: var(--violet); }
+    .project-entry h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.3rem; letter-spacing: -0.01em; }
+    .project-entry .meta { font-size: 0.78rem; color: var(--text-dim); margin-bottom: 0.8rem; }
+    .project-entry .desc { font-size: 0.88rem; color: var(--text-sub); line-height: 1.75; }
+    .project-entry .tags { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-top: 1rem; }
+    .project-entry .tags span { font-family: var(--mono); font-size: 0.62rem; padding: 0.18rem 0.5rem; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; color: var(--text-dim); }
+
+    .empty-state { text-align: center; padding: 4rem 2rem; color: var(--text-dim); font-size: 0.9rem; }
+
+    footer { max-width: 1000px; margin: 0 auto; padding: 3rem 2.5rem 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    footer p { font-size: 0.78rem; color: var(--text-dim); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    footer a { font-size: 0.78rem; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      .page-header { padding: 6rem 1.5rem 1.5rem; }
+      section { padding: 2rem 1.5rem; }
+      nav ul { display: none; }
+      .nav-toggle { display: block; }
+      nav ul.open { display: flex; flex-direction: column; position: absolute; top: 56px; left: 0; right: 0; background: rgba(250,250,247,0.97); backdrop-filter: blur(16px); padding: 1.2rem 2rem; gap: 1rem; border-bottom: 1px solid var(--border); }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Sun-Jin Lee</a>
+    <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="project.html" style="color:var(--accent);">Project</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <a href="index.html" class="back-link">← Back to Home</a>
+  <h1>Project Archive</h1>
+  <p>Research and development projects with detailed descriptions, methodologies, and outcomes.</p>
+</div>
+
+<section>
+  <!-- ===== 아래 프로젝트 카드를 복사해서 추가하세요 ===== -->
+
+  <div class="project-entry">
+    <div class="project-entry-label security">Security</div>
+    <h3>프로젝트 제목을 여기에 입력하세요</h3>
+    <div class="meta">2024.01 — 2024.12 · 역할: Lead Researcher</div>
+    <div class="desc">
+      프로젝트 설명을 여기에 작성하세요. 연구 배경, 목적, 방법론, 결과 등을 자유롭게 기술합니다.
+    </div>
+    <div class="tags">
+      <span>Python</span><span>PyTorch</span><span>NS-3</span>
+    </div>
+  </div>
+
+  <div class="project-entry">
+    <div class="project-entry-label network">Network</div>
+    <h3>프로젝트 제목을 여기에 입력하세요</h3>
+    <div class="meta">2023.06 — 2024.03 · 역할: Researcher</div>
+    <div class="desc">
+      프로젝트 설명을 여기에 작성하세요.
+    </div>
+    <div class="tags">
+      <span>C</span><span>Openwifi</span><span>Vivado</span>
+    </div>
+  </div>
+
+  <div class="project-entry">
+    <div class="project-entry-label ai">AI / ML</div>
+    <h3>프로젝트 제목을 여기에 입력하세요</h3>
+    <div class="meta">2023.01 — 2023.06 · 역할: PI</div>
+    <div class="desc">
+      프로젝트 설명을 여기에 작성하세요.
+    </div>
+    <div class="tags">
+      <span>TensorFlow</span><span>scikit-learn</span><span>MATLAB</span>
+    </div>
+  </div>
+
+  <!-- ===== 카드 추가는 위 패턴을 복사해서 붙여넣으세요 ===== -->
+  <!-- label 종류: security(빨강), network(초록), ai(보라) -->
+</section>
+
+<footer>
+  <p>&copy; 2026 Sun-Jin Lee</p>
+  <div class="footer-links">
+    <a href="mailto:220237017@sungshin.ac.kr">Email</a>
+    <a href="https://scholar.google.com/citations?user=Z7TX-DcAAAAJ&hl=en" target="_blank">Google Scholar</a>
+    <a href="https://www.linkedin.com/in/sunjin-lee-7967a8173" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
+</body>
+</html>
