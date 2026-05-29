@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>이선진 — Researcher</title>
+  <title>Sun-Jin Lee — Researcher</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,7 +35,9 @@
     body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
     ::selection { background: var(--accent); color: #fff; }
 
-    /* NAV */
+    .ko { display: block; font-size: 0.78rem; color: var(--text-dim); margin-top: 0.2rem; line-height: 1.5; }
+    .ko-inline { font-size: 0.78rem; color: var(--text-dim); }
+
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,250,247,0.88); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
     .nav-inner { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
     .logo { font-size: 1rem; font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
@@ -45,14 +47,13 @@
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
     .nav-toggle span { display: block; width: 20px; height: 1.5px; background: var(--text); margin: 4.5px 0; }
 
-    /* HERO */
     .hero { max-width: 1000px; margin: 0 auto; padding: 9rem 2.5rem 4.5rem; display: grid; grid-template-columns: 180px 1fr; gap: 3rem; align-items: start; }
     .hero-photo { width: 180px; height: 220px; border-radius: 10px; background: #EDEBE6; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
     .hero-photo-placeholder { font-size: 3rem; font-weight: 700; color: var(--text-dim); opacity: 0.35; }
     .hero-kicker { font-family: var(--mono); font-size: 0.7rem; color: var(--teal); letter-spacing: 0.03em; margin-bottom: 0.8rem; display: inline-flex; align-items: center; gap: 0.5rem; background: var(--teal-soft); padding: 0.3rem 0.7rem; border-radius: 4px; }
     .hero-kicker::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--teal); }
-    .hero h1 { font-size: clamp(2.2rem,4.5vw,3rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 1.2rem; }
-    .hero h1 span { font-weight: 300; color: var(--text-dim); font-size: 0.55em; margin-left: 0.3em; }
+    .hero h1 { font-size: clamp(2.2rem,4.5vw,3rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 0.3rem; }
+    .hero-name-ko { font-size: 1rem; font-weight: 400; color: var(--text-dim); margin-bottom: 1.2rem; }
     .hero-bio { font-size: 0.95rem; color: var(--text-sub); max-width: 500px; line-height: 1.8; }
     .hero-bio strong { color: var(--text); font-weight: 600; }
     .hero-contact { margin-top: 0.8rem; font-size: 0.84rem; color: var(--text-dim); }
@@ -64,7 +65,6 @@
     .btn-outline { background: transparent; color: var(--text-sub); border: 1px solid var(--border); }
     .btn-outline:hover { border-color: var(--text-dim); color: var(--text); }
 
-    /* INTERESTS */
     .interests { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem 3rem; display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap; }
     .interests-label { font-family: var(--mono); font-size: 0.64rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-dim); margin-right: 0.3rem; }
     .tag { font-size: 0.73rem; font-weight: 500; padding: 0.28rem 0.65rem; border-radius: 100px; }
@@ -74,7 +74,6 @@
     .tag-violet { background: var(--violet-soft); color: var(--violet); }
     .tag-amber { background: var(--amber-soft); color: var(--amber); }
 
-    /* SECTION */
     section { max-width: 1000px; margin: 0 auto; padding: 4.5rem 2.5rem; }
     section + section { border-top: 1px solid var(--border); }
     .section-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2.5rem; }
@@ -82,20 +81,16 @@
     .section-head .count { font-family: var(--mono); font-size: 0.68rem; color: var(--text-dim); }
     .section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-    /* LIST ITEMS */
     .list-item { display: grid; grid-template-columns: 140px 1fr; gap: 2rem; padding: 1.2rem 0; }
     .list-item + .list-item { border-top: 1px solid var(--border); }
     .list-year { font-family: var(--mono); font-size: 0.74rem; color: var(--text-dim); padding-top: 0.15rem; }
     .list-title { font-weight: 600; font-size: 0.93rem; margin-bottom: 0.1rem; }
     .list-sub { color: var(--text-sub); font-size: 0.86rem; }
-    .list-detail { font-size: 0.8rem; color: var(--text-dim); margin-top: 0.2rem; line-height: 1.6; }
 
-    /* SIMPLE LIST */
     .simple-item { padding: 0.9rem 0; font-size: 0.88rem; color: var(--text-sub); line-height: 1.65; }
     .simple-item + .simple-item { border-top: 1px solid var(--border); }
     .simple-item strong { color: var(--text); font-weight: 600; }
 
-    /* GROUP LABELS */
     .group-label { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.3rem 0.6rem; border-radius: 4px; display: inline-block; margin-bottom: 1rem; margin-top: 2rem; }
     .group-label:first-of-type { margin-top: 0; }
     .group-label.sci { background: var(--accent-soft); color: var(--accent); }
@@ -109,7 +104,26 @@
     .group-label.granted { background: var(--teal-soft); color: var(--teal); }
     .group-label.review { background: var(--violet-soft); color: var(--violet); }
 
-    /* PUB */
+    /* PUB FILTERS */
+    .pub-filters { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2.5rem; }
+    .pub-filter-btn { font-family: var(--mono); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.02em; padding: 0.75rem 1.2rem; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--text-sub); cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: space-between; width: 100%; text-align: left; }
+    .pub-filter-btn:hover { border-color: var(--text-dim); color: var(--text); }
+    .pub-filter-btn .num { font-weight: 400; color: var(--text-dim); font-size: 0.75rem; }
+    .pub-filter-btn.active.sci { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+    .pub-filter-btn.active.scopus { background: var(--violet-soft); border-color: var(--violet); color: var(--violet); }
+    .pub-filter-btn.active.kci { background: var(--amber-soft); border-color: var(--amber); color: var(--amber); }
+    .pub-filter-btn.active.review { background: var(--violet-soft); border-color: var(--violet); color: var(--violet); }
+    .pub-filter-btn.active.conf { background: var(--teal-soft); border-color: var(--teal); color: var(--teal); }
+    .pub-filter-btn.active.article { background: var(--slate-soft); border-color: var(--slate); color: var(--slate); }
+    .pub-filter-btn.active.completed { background: var(--slate-soft); border-color: var(--slate); color: var(--slate); }
+    .pub-filter-btn.active.pending { background: var(--amber-soft); border-color: var(--amber); color: var(--amber); }
+    .pub-filter-btn.active.granted { background: var(--teal-soft); border-color: var(--teal); color: var(--teal); }
+    .pub-filter-btn.active.accent { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+    .pub-filter-btn.active .num { color: inherit; opacity: 0.7; }
+    .pub-group { display: none; }
+    .pub-group.open { display: block; animation: slideDown 0.35s ease; }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+
     .pub-item { padding: 1.1rem 0; }
     .pub-item + .pub-item { border-top: 1px solid var(--border); }
     .pub-title { font-weight: 500; font-size: 0.9rem; line-height: 1.55; margin-bottom: 0.2rem; }
@@ -118,29 +132,24 @@
     .pub-venue { font-size: 0.78rem; color: var(--text-dim); font-style: italic; margin-top: 0.08rem; }
     .pub-if { display: inline-block; font-family: var(--mono); font-size: 0.58rem; color: var(--slate); background: var(--slate-soft); padding: 0.14rem 0.4rem; border-radius: 3px; margin-top: 0.25rem; }
 
-    /* PROJECT CARD */
     .proj-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.4rem; margin-bottom: 0.7rem; }
     .proj-card .proj-label { display: inline-block; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; padding: 0.18rem 0.45rem; border-radius: 4px; margin-bottom: 0.5rem; }
     .proj-card .proj-label.ongoing { background: var(--teal-soft); color: var(--teal); }
     .proj-card .proj-label.completed { background: var(--slate-soft); color: var(--slate); }
     .proj-name { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.15rem; line-height: 1.5; }
-    .proj-name-en { font-size: 0.82rem; color: var(--text-sub); line-height: 1.5; margin-bottom: 0.2rem; }
     .proj-meta { font-size: 0.76rem; color: var(--text-dim); }
 
-    /* AWARD */
     .award-item { display: flex; gap: 1rem; padding: 1rem 0; align-items: start; }
     .award-item + .award-item { border-top: 1px solid var(--border); }
     .award-yr { font-family: var(--mono); font-size: 0.66rem; font-weight: 500; padding: 0.2rem 0.45rem; border-radius: 4px; flex-shrink: 0; margin-top: 0.1rem; background: var(--slate-soft); color: var(--slate); }
     .award-name { font-weight: 500; font-size: 0.88rem; line-height: 1.5; }
     .award-org { font-size: 0.78rem; color: var(--text-dim); margin-top: 0.05rem; }
 
-    /* NEWS */
     .news-item { padding: 0.8rem 0; }
     .news-item + .news-item { border-top: 1px solid var(--border); }
     .news-item a { font-size: 0.86rem; color: var(--text-sub); text-decoration: none; line-height: 1.6; transition: color 0.2s; }
     .news-item a:hover { color: var(--accent); }
 
-    /* FOOTER */
     footer { max-width: 1000px; margin: 0 auto; padding: 3rem 2.5rem 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
     footer p { font-size: 0.78rem; color: var(--text-dim); }
     .footer-links { display: flex; gap: 1.5rem; }
@@ -187,11 +196,14 @@
 
 <!-- HERO -->
 <header class="hero">
-  <div class="hero-photo"><span class="hero-photo-placeholder">이</span></div>
+  <div class="hero-photo"><img src="photo.png" alt="Sun-Jin Lee" style="width:100%;height:100%;object-fit:cover;"></div>
   <div>
-    <div class="hero-kicker">Ph.D. Candidate · 성신여자대학교</div>
-    <h1>이선진 <span>Sun-Jin Lee</span></h1>
-    <p class="hero-bio">성신여자대학교 미래융합기술공학과 박사과정. <strong>AI 기반 보안 시스템</strong>과 <strong>네트워크/무선 통신 보안</strong> 분야를 연구하고 있습니다.</p>
+    <div class="hero-kicker">Ph.D. Candidate · Sungshin Women's University</div>
+    <h1>Sun-Jin Lee</h1>
+    <div class="hero-name-ko">이선진</div>
+    <p class="hero-bio">
+      Ph.D. course student in the Department of Future Convergence Technology Engineering, Sungshin Women's University, Seoul, Korea. My research focuses on <strong>AI-driven security systems</strong> and <strong>network/wireless communication security</strong>.
+    </p>
     <p class="hero-contact">Office: Sungshin University, Prime #501</p>
     <div class="hero-links">
       <a href="mailto:220237017@sungshin.ac.kr" class="btn btn-primary">
@@ -219,16 +231,46 @@
 <!-- EDUCATION -->
 <section id="education">
   <div class="section-head"><h2>Education</h2></div>
-  <div class="list-item reveal"><span class="list-year">2023.03 — 현재</span><div><div class="list-title">박사과정 · 미래융합기술공학</div><div class="list-sub">성신여자대학교 대학원, 서울</div></div></div>
-  <div class="list-item reveal"><span class="list-year">2021.09 — 2023.02</span><div><div class="list-title">석사 · 미래융합기술공학</div><div class="list-sub">성신여자대학교 대학원, 서울</div></div></div>
-  <div class="list-item reveal"><span class="list-year">2018.03 — 2021.08</span><div><div class="list-title">학사 · 융합보안공학</div><div class="list-sub">성신여자대학교, 서울</div></div></div>
+  <div class="list-item reveal">
+    <span class="list-year">2023.03 — Present</span>
+    <div>
+      <div class="list-title">Ph.D. Course · Future Convergence Technology Engineering</div>
+      <div class="list-sub">Sungshin Women's University, Seoul, Korea</div>
+      <span class="ko">성신여자대학교 미래융합기술공학과 박사과정</span>
+    </div>
+  </div>
+  <div class="list-item reveal">
+    <span class="list-year">2021.09 — 2023.02</span>
+    <div>
+      <div class="list-title">M.S. · Future Convergence Technology Engineering</div>
+      <div class="list-sub">Sungshin Women's University, Seoul, Korea</div>
+      <span class="ko">성신여자대학교 미래융합기술공학과 석사</span>
+    </div>
+  </div>
+  <div class="list-item reveal">
+    <span class="list-year">2018.03 — 2021.08</span>
+    <div>
+      <div class="list-title">B.S. · Convergence Security Engineering</div>
+      <div class="list-sub">Sungshin Women's University, Seoul, Korea</div>
+      <span class="ko">성신여자대학교 융합보안공학과 학사</span>
+    </div>
+  </div>
 </section>
 
 <!-- PUBLICATIONS -->
 <section id="publications">
-  <div class="section-head"><h2>Publications</h2><span class="count">SCI 12 · SCOPUS 2 · KCI 4 · Conf 26 · Article 1</span></div>
+  <div class="section-head"><h2>Publications</h2></div>
 
-  <!-- SCI -->
+  <div class="pub-filters">
+    <button class="pub-filter-btn sci" data-target="sci" onclick="togglePub(this)">SCI / SCIE <span class="num">12</span></button>
+    <button class="pub-filter-btn scopus" data-target="scopus" onclick="togglePub(this)">SCOPUS <span class="num">2</span></button>
+    <button class="pub-filter-btn kci" data-target="kci" onclick="togglePub(this)">KCI <span class="num">4</span></button>
+    <button class="pub-filter-btn review" data-target="review" onclick="togglePub(this)">Under Review <span class="num">4</span></button>
+    <button class="pub-filter-btn conf" data-target="conf" onclick="togglePub(this)">Conferences <span class="num">26</span></button>
+    <button class="pub-filter-btn article" data-target="article" onclick="togglePub(this)">Articles <span class="num">1</span></button>
+  </div>
+
+  <div class="pub-group" data-group="sci">
   <div class="group-label sci">SCI / SCIE Journals</div>
 
   <div class="pub-item reveal">
@@ -304,12 +346,14 @@
     <span class="pub-if">IF 2.4 · Q2 · Top 31.3%</span>
   </div>
 
-  <!-- SCOPUS -->
+  </div><!-- /sci -->
+
+  <div class="pub-group" data-group="scopus">
   <div class="group-label scopus">SCOPUS</div>
   <div class="pub-item reveal">
     <div class="pub-title">Performance Improvement of Fuzzy C-Means Clustering Algorithm by Optimized Early Stopping for Inhomogeneous Datasets</div>
     <div class="pub-authors">C.-R. Han, <strong>S.-J. Lee</strong>, I.-G. Lee</div>
-    <div class="pub-venue">Journal of Information and Communication Convergence Engineering (JICCE), Vol. 21, No. 3, 2023</div>
+    <div class="pub-venue">JICCE, Vol. 21, No. 3, 2023</div>
   </div>
   <div class="pub-item reveal">
     <div class="pub-title">Ransomware Detection using Open-Source Tools</div>
@@ -317,12 +361,15 @@
     <div class="pub-venue">ICACT-TACT, Vol. 10, No. 5, pp. 1385–1391, Sept. 2021</div>
   </div>
 
-  <!-- KCI -->
+  </div><!-- /scopus -->
+
+  <div class="pub-group" data-group="kci">
   <div class="group-label kci">KCI</div>
   <div class="pub-item reveal">
     <div class="pub-title">Industrial IoT Data Protection Technology and Policy for Strengthening OT Industrial Security</div>
     <div class="pub-authors"><strong>S.-J. Lee</strong>, C.-R. Han, H.-E. Kim, D.-E. Kim, I.-G. Lee</div>
     <div class="pub-venue">Korean Journal of Industrial Security, Jan. 2024</div>
+    <span class="ko">OT 산업보안 강화를 위한 산업용 IoT 데이터 보호 기술 및 정책</span>
   </div>
   <div class="pub-item reveal">
     <div class="pub-title">Federated Deep Reinforcement Learning for Secure Industrial Internet of Things</div>
@@ -330,17 +377,21 @@
     <div class="pub-venue">JKIISC, Vol. 33, No. 6, Dec. 2023</div>
   </div>
   <div class="pub-item reveal">
-    <div class="pub-title">비정형 데이터의 비식별화 정책에 관한 연구</div>
+    <div class="pub-title">A Study on the Policy of De-identification of Unstructured Data in the Medical Data Industry</div>
     <div class="pub-authors"><strong>S.-J. Lee</strong>, T.-R. Park, I.-G. Lee</div>
-    <div class="pub-venue">Korea Convergence Security Association (KCSA), 2022</div>
+    <div class="pub-venue">KCSA, 2022</div>
+    <span class="ko">의료 데이터 산업의 비정형 데이터 비식별화 정책에 관한 연구</span>
   </div>
   <div class="pub-item reveal">
-    <div class="pub-title">정밀의료산업 기밀정보 유출 방지를 위한 산업보안 관리 정책 및 체계</div>
+    <div class="pub-title">Industrial Security Management Policy and System to Prevent the Leakage of Confidential Information for Precision Medical Industry</div>
     <div class="pub-authors">T.-R. Park, I.-G. Lee, <strong>S.-J. Lee</strong></div>
     <div class="pub-venue">Korean Journal of Industrial Security, Vol. 12, No. 1, pp. 111–130, 2022</div>
+    <span class="ko">정밀의료산업 기밀정보 유출 방지를 위한 산업보안 관리 정책 및 체계</span>
   </div>
 
-  <!-- Under Review -->
+  </div><!-- /kci -->
+
+  <div class="pub-group" data-group="review">
   <div class="group-label review">Under Review</div>
   <div class="pub-item reveal">
     <div class="pub-title">Unlocking 6G: Dynamic Zero Trust for Secure and Low-Latency Open Radio Access Networks</div>
@@ -359,7 +410,9 @@
     <div class="pub-authors"><strong>First Author</strong> · submitted to IEEE Trans. on Cognitive Communications and Networking</div>
   </div>
 
-  <!-- Conferences -->
+  </div><!-- /review -->
+
+  <div class="pub-group" data-group="conf">
   <div class="group-label conf">Conferences (26)</div>
   <div class="pub-item reveal"><div class="pub-title">Dynamic-Differential Privacy based on Feature Selection with Improved Usability and Security</div><div class="pub-authors"><strong>S.-J. Lee</strong>, H. Shim, J. Ryu, I.-G. Lee</div><div class="pub-venue">ICISSP 2025, Porto, Portugal, Feb. 2025</div></div>
   <div class="pub-item reveal"><div class="pub-title">Privacy-Preserving GAN-Based Data Synthesis for Intelligent Intrusion Detection Systems</div><div class="pub-authors"><strong>S.-J. Lee</strong>, D.-E. Kim, I.-G. Lee</div><div class="pub-venue">ICOIN 2025, Chiang Mai, Thailand, Jan. 2025</div></div>
@@ -368,12 +421,12 @@
   <div class="pub-item reveal"><div class="pub-title">OTP-based Peer-to-Peer Low Latency Authentication for Next-Generation Digital IDs</div><div class="pub-authors">J.-M. Lee, <strong>S.-J. Lee</strong>, I.-G. Lee</div><div class="pub-venue">Mobisec 2024 Workshop, Sapporo, Japan, Dec. 2024</div></div>
   <div class="pub-item reveal"><div class="pub-title">Secure and Low Latency Transmission Technique for Next Generation Wireless LANs</div><div class="pub-authors"><strong>S.-J. Lee</strong>, I.-G. Lee</div><div class="pub-venue">WISA 2024, Jeju, Korea, Aug. 2024 (Poster)</div></div>
   <div class="pub-item reveal"><div class="pub-title">Multi-Channel-Based Physical Layer Security for Dynamic Key Update</div><div class="pub-authors">C.-Y. Park, <strong>S.-J. Lee</strong>, I.-G. Lee</div><div class="pub-venue">WISA 2024, Jeju, Korea, Aug. 2024 (Poster)</div></div>
-  <div class="pub-item reveal"><div class="pub-title">특징 선택과 동적 차분 프라이버시를 통한 유용성 및 보안성 향상 기법</div><div class="pub-authors"><strong>S.-J. Lee</strong>, H.-Y. Shim, J.-H. Ryu, I.-G. Lee</div><div class="pub-venue">KCSA Summer Conference, Naju, Korea, 2024.06</div></div>
-  <div class="pub-item reveal"><div class="pub-title">OTP-based Peer to Peer Authentication Technique</div><div class="pub-authors">J.-M. Lee, <strong>S.-J. Lee</strong>, I.-G. Lee</div><div class="pub-venue">KCSA Summer Conference, Naju, Korea, 2024.06</div></div>
-  <div class="pub-item reveal"><div class="pub-title">안전한 사물인터넷을 위한 이중 채널을 활용한 물리계층 보안</div><div class="pub-authors">C.-Y. Park, <strong>S.-J. Lee</strong>, I.-G. Lee</div><div class="pub-venue">KIISC CISC-S'24, Sejong, 2024 (우수논문상)</div></div>
-  <div class="pub-item reveal"><div class="pub-title">Lightweight Anomaly Detection Technique for Secure Firmware Over-the-Air</div><div class="pub-authors">G.-W. Lee, S.-Y. Lim, <strong>S.-J. Lee</strong>, I.-G. Lee</div><div class="pub-venue">KIISC CISC-S'24, Sejong, 2024</div></div>
-  <div class="pub-item reveal"><div class="pub-title">인터프레임 스페이스 통신을 활용한 저지연 트래픽 전송 기법</div><div class="pub-authors"><strong>S.-J. Lee</strong>, I.-G. Lee</div><div class="pub-venue">ASK 2024, Pyeongchang, May 2024 (최우수논문상)</div></div>
-  <div class="pub-item reveal"><div class="pub-title">Dynamic Secure Link Adaptation Technique for Low-power IoT Communications</div><div class="pub-authors">C.-Y. Park, <strong>S.-J. Lee</strong>, I.-G. Lee</div><div class="pub-venue">ASK 2024, Pyeongchang, May 2024 (장려상)</div></div>
+  <div class="pub-item reveal"><div class="pub-title">Method for Improving Usability and Security through Feature Selection and Dynamic Differential Privacy</div><div class="pub-authors"><strong>S.-J. Lee</strong>, H.-Y. Shim, J.-H. Ryu, I.-G. Lee</div><div class="pub-venue">KCSA Summer Conference, Naju, Korea, Jun. 2024</div></div>
+  <div class="pub-item reveal"><div class="pub-title">OTP-based Peer to Peer Authentication Technique</div><div class="pub-authors">J.-M. Lee, <strong>S.-J. Lee</strong>, I.-G. Lee</div><div class="pub-venue">KCSA Summer Conference, Naju, Korea, Jun. 2024</div></div>
+  <div class="pub-item reveal"><div class="pub-title">Physical Layer Security Utilizing Dual Channel for Secure Internet of Things</div><div class="pub-authors">C.-Y. Park, <strong>S.-J. Lee</strong>, I.-G. Lee</div><div class="pub-venue">KIISC CISC-S'24, Sejong, Jun. 2024 (Excellence Award)</div></div>
+  <div class="pub-item reveal"><div class="pub-title">Lightweight Anomaly Detection Technique for Secure Firmware Over-the-Air</div><div class="pub-authors">G.-W. Lee, S.-Y. Lim, <strong>S.-J. Lee</strong>, I.-G. Lee</div><div class="pub-venue">KIISC CISC-S'24, Sejong, Jun. 2024</div></div>
+  <div class="pub-item reveal"><div class="pub-title">Low Latency Traffic Transmission Technique Utilizing Interframe Space Communication</div><div class="pub-authors"><strong>S.-J. Lee</strong>, I.-G. Lee</div><div class="pub-venue">ASK 2024, Pyeongchang, May 2024 (Best Paper Award)</div></div>
+  <div class="pub-item reveal"><div class="pub-title">Dynamic Secure Link Adaptation Technique for Low-power IoT Communications</div><div class="pub-authors">C.-Y. Park, <strong>S.-J. Lee</strong>, I.-G. Lee</div><div class="pub-venue">ASK 2024, Pyeongchang, May 2024 (Encouragement Award)</div></div>
   <div class="pub-item reveal"><div class="pub-title">Model Agnostic Meta-Learning for Efficient Federated Deep Reinforcement</div><div class="pub-authors">C.-R. Han, <strong>S.-J. Lee</strong>, I.-G. Lee</div><div class="pub-venue">Mobisec 2023, Okinawa, Japan, Dec. 2023</div></div>
   <div class="pub-item reveal"><div class="pub-title">Variational Autoencoder-based Rule Automation for EDR Framework</div><div class="pub-authors">H.-E. Lee, <strong>S.-J. Lee</strong>, I.-G. Lee</div><div class="pub-venue">Mobisec 2023, Okinawa, Japan, Dec. 2023</div></div>
   <div class="pub-item reveal"><div class="pub-title">Lightweight Federated Learning-based Intrusion Detection for the Industrial IoT</div><div class="pub-authors"><strong>S.-J. Lee</strong>, C.-R. Han, H.-E. Lee, D.-E. Kim, I.-G. Lee</div><div class="pub-venue">Mobisec 2023, Okinawa, Japan, Dec. 2023</div></div>
@@ -383,20 +436,22 @@
   <div class="pub-item reveal"><div class="pub-title">ML-based Fast Detection and Proactive Response Technique for Advanced Persistent Threats</div><div class="pub-authors"><strong>S.-J. Lee</strong>, S.-E. Jeon, I.-G. Lee</div><div class="pub-venue">Mobisec 2022</div></div>
   <div class="pub-item reveal"><div class="pub-title">Performance Evaluation of Open Source-based Intrusion Detection for Advanced Cyberattacks</div><div class="pub-authors">Y.-R. Lee, S.-E. Jeon, <strong>S.-J. Lee</strong>, I.-G. Lee</div><div class="pub-venue">WISA 2022, Aug. 2022</div></div>
   <div class="pub-item reveal"><div class="pub-title">Machine Learning-based Malware Classification Techniques Utilizing Partial PE Sections</div><div class="pub-authors"><strong>S.-J. Lee</strong>, Y.-R. Lee, S.-Y. Lee, I.-G. Lee</div><div class="pub-venue">KCSA Conference, Aug. 2021</div></div>
-  <div class="pub-item reveal"><div class="pub-title">산업보안 수사의 디지털 증거 확보를 위한 행정조사기본법 개정 연구</div><div class="pub-authors">Y.-R. Lee, <strong>S.-J. Lee</strong>, I.-G. Lee, G.-M. Kang</div><div class="pub-venue">KAIS/KAF Joint Conference, Aug. 2021</div></div>
-  <div class="pub-item reveal"><div class="pub-title">얼굴인식 데이터의 동형 연산 노이즈 특성에 관한 연구</div><div class="pub-authors"><strong>S.-J. Lee</strong>, J.-M. Lee, Y.-R. Lee, I.-G. Lee</div><div class="pub-venue">JCCI 2021</div></div>
+  <div class="pub-item reveal"><div class="pub-title">A Study on the Revision of the Basic Act on Administrative Investigations to Secure Digital Evidence in Industrial Security Investigations</div><div class="pub-authors">Y.-R. Lee, <strong>S.-J. Lee</strong>, I.-G. Lee, G.-M. Kang</div><div class="pub-venue">KAIS/KAF Joint Conference, Aug. 2021</div><span class="ko">산업보안 수사의 디지털 증거 확보를 위한 행정조사기본법 개정 연구</span></div>
+  <div class="pub-item reveal"><div class="pub-title">A Study on the Homomorphic Computational Noise Characteristics of Face Recognition Data</div><div class="pub-authors"><strong>S.-J. Lee</strong>, J.-M. Lee, Y.-R. Lee, I.-G. Lee</div><div class="pub-venue">JCCI 2021</div><span class="ko">얼굴인식 데이터의 동형 연산 노이즈 특성에 관한 연구</span></div>
   <div class="pub-item reveal"><div class="pub-title">A Study on Systematic Ransomware Detection Techniques</div><div class="pub-authors"><strong>S.-J. Lee</strong>, H.-Y. Shim, Y.-R. Lee, T.-R. Park, S.-H. Park, I.-G. Lee</div><div class="pub-venue">IEEE ICACT, Feb. 2021</div></div>
 
-  <!-- Article -->
+  </div><!-- /conf -->
+
+  <div class="pub-group" data-group="article">
   <div class="group-label article">Articles</div>
   <div class="pub-item reveal">
     <div class="pub-title">IEEE Wireless LAN Standardization Trends for Industrial IoT Technology</div>
     <div class="pub-authors">I.-G. Lee, <strong>S.-J. Lee</strong>, S.-E. Jeon</div>
-    <div class="pub-venue">SEP inside 37, 2023.04</div>
+    <div class="pub-venue">SEP inside 37, Apr. 2023</div>
+    <span class="ko">산업용 IoT 기술을 위한 IEEE 무선랜 표준화 동향</span>
   </div>
+  </div><!-- /article -->
 </section>
-
-<!-- R&D PROJECTS -->
 <section id="projects">
   <div class="section-head"><h2>R&D Projects</h2></div>
 
@@ -404,90 +459,116 @@
 
   <div class="proj-card reveal">
     <div class="proj-label ongoing">Ongoing</div>
-    <div class="proj-name">첨단산업기술보호 전문인력양성: 정보통신첨단기술보호</div>
-    <div class="proj-meta">산업통상자원부, 한국산업기술진흥원 · 2024.03 — 2029.02</div>
+    <div class="proj-name">Training Industrial Security Specialist for High-Tech Industry</div>
+    <span class="ko" style="margin-top:0;margin-bottom:0.3rem;">첨단산업기술보호 전문인력양성: 정보통신첨단기술보호</span>
+    <div class="proj-meta">MOTIE, KIAT · 2024.03 — 2029.02</div>
   </div>
   <div class="proj-card reveal">
     <div class="proj-label ongoing">Ongoing</div>
-    <div class="proj-name">저궤도 위성 기반 IoT 공격표면 분석 및 디지털 면역 기술: 펌웨어 취약점 분석 및 자동복구 기술</div>
-    <div class="proj-meta">과학기술정보통신부, 한국연구재단 · 2025.06 — 2028.05</div>
+    <div class="proj-name">Attack Surface Analysis and Digital Immunity Technologies for LEO Satellite-Based IoT</div>
+    <span class="ko" style="margin-top:0;margin-bottom:0.3rem;">저궤도 위성 기반 IoT 공격표면 분석 및 디지털 면역 기술: 펌웨어 취약점 분석 및 자동복구 기술</span>
+    <div class="proj-meta">MSIT, NRF · 2025.06 — 2028.05</div>
   </div>
   <div class="proj-card reveal">
     <div class="proj-label ongoing">Ongoing</div>
-    <div class="proj-name">이동통신 및 AirGap 환경에서 스니핑 방지 기술 개발</div>
-    <div class="proj-meta">과학기술정보통신부, 정보통신기획평가원 · 2024.06 — 2026.12</div>
+    <div class="proj-name">Development of Anti-Sniffing Technology for Mobile Communication and AirGap Environments</div>
+    <span class="ko" style="margin-top:0;margin-bottom:0.3rem;">이동통신 및 AirGap 환경에서 스니핑 방지 기술 개발</span>
+    <div class="proj-meta">MSIT, IITP · 2024.06 — 2026.12</div>
   </div>
 
-  <div class="group-label completed" style="margin-top:2.5rem;">Completed</div>
+  <button class="pub-filter-btn completed" style="margin-top:1.5rem; width:auto;" onclick="toggleCompleted(this)">
+    Completed Projects <span class="num">8</span>
+  </button>
+
+  <div class="pub-group" id="completed-projects">
 
   <div class="proj-card reveal">
     <div class="proj-label completed">Completed</div>
-    <div class="proj-name">통신설비안전관리시스템의 우회경로 확보 기술에 관한 연구</div>
-    <div class="proj-meta">한국정보화진흥원(NIA) · 2023.10 — 2023.12</div>
+    <div class="proj-name">Research on Securing Detour Routes in Safety Management System of Communication Facilities</div>
+    <span class="ko" style="margin-top:0;margin-bottom:0.3rem;">통신설비안전관리시스템의 우회경로 확보 기술에 관한 연구</span>
+    <div class="proj-meta">NIA · 2023.10 — 2023.12</div>
   </div>
   <div class="proj-card reveal">
     <div class="proj-label completed">Completed</div>
-    <div class="proj-name">디지털 ID 표준과 디지털 ID 보안 기술 분석</div>
-    <div class="proj-meta">조폐공사(KOMSCO) · 2023.04 — 2023.10</div>
+    <div class="proj-name">Trend Analysis of Digital ID Standards and Security Technologies</div>
+    <span class="ko" style="margin-top:0;margin-bottom:0.3rem;">디지털 ID 표준과 디지털 ID 보안 기술 분석</span>
+    <div class="proj-meta">KOMSCO · 2023.04 — 2023.10</div>
   </div>
   <div class="proj-card reveal">
     <div class="proj-label completed">Completed · PI</div>
-    <div class="proj-name">산업용 IoT를 위한 AI 기반 경량 고효율 EDR 연구</div>
-    <div class="proj-meta">WISET 공학연구팀 · 2023.04 — 2023.10 · 연구책임자(PI)</div>
+    <div class="proj-name">Research on AI-based Lightweight High Efficiency EDR for Industrial IoT</div>
+    <span class="ko" style="margin-top:0;margin-bottom:0.3rem;">산업용 IoT를 위한 AI 기반 경량 고효율 EDR 연구 (연구책임자)</span>
+    <div class="proj-meta">WISET Engineering Research Team · 2023.04 — 2023.10</div>
   </div>
   <div class="proj-card reveal">
     <div class="proj-label completed">Completed</div>
-    <div class="proj-name">ICT혁신인재양성: 인공지능을 위한 네트워크 기술 연구개발</div>
-    <div class="proj-meta">과학기술정보통신부, 정보통신기획평가원 · 2022.07 — 2026.12</div>
+    <div class="proj-name">ICT Innovative Talent 4.0: Next Generation Communication Network and Security</div>
+    <span class="ko" style="margin-top:0;margin-bottom:0.3rem;">인공지능을 위한 네트워크 기술 연구개발 및 ICT혁신인재양성</span>
+    <div class="proj-meta">MSIT, IITP · 2022.07 — 2026.12</div>
   </div>
   <div class="proj-card reveal">
     <div class="proj-label completed">Completed</div>
-    <div class="proj-name">4차산업혁명기반 산업보안전문인력양성: 디지털헬스케어 산업보안기술 및 인재양성</div>
-    <div class="proj-meta">산업통상자원부, KIAT · 2021.03 — 2024.02</div>
+    <div class="proj-name">Training R&D Professionals to Protect Industrial Technology: Digital Healthcare Industrial Security</div>
+    <span class="ko" style="margin-top:0;margin-bottom:0.3rem;">4차산업혁명기반 산업보안전문인력양성: 디지털헬스케어 산업보안기술 및 인재양성</span>
+    <div class="proj-meta">MOTIE, KIAT · 2021.03 — 2024.02</div>
   </div>
   <div class="proj-card reveal">
     <div class="proj-label completed">Completed</div>
-    <div class="proj-name">차세대 위협 탐지 시스템을 위한 오픈소스 EDR과 연동 센서 기술 분석</div>
-    <div class="proj-meta">국가보안기술연구소(NSR) · 2021.04 — 2021.10</div>
+    <div class="proj-name">Analysis of Open Source EDR and Internetworking Sensors for Next Generation Threat Detection System</div>
+    <span class="ko" style="margin-top:0;margin-bottom:0.3rem;">차세대 위협 탐지 시스템을 위한 오픈소스 EDR과 연동 센서 기술 분석</span>
+    <div class="proj-meta">NSR · 2021.04 — 2021.10</div>
   </div>
   <div class="proj-card reveal">
     <div class="proj-label completed">Completed</div>
-    <div class="proj-name">대규모 지능형 사물인터넷의 데이터 위변조 방지 기술에 관한 연구</div>
-    <div class="proj-meta">한국연구재단 · 2020.06 — 2023.02</div>
+    <div class="proj-name">Research on Data Forgery Prevention Technology of Massive Smart IoTs</div>
+    <span class="ko" style="margin-top:0;margin-bottom:0.3rem;">대규모 지능형 사물인터넷의 데이터 위변조 방지 기술에 관한 연구</span>
+    <div class="proj-meta">NRF · 2020.06 — 2023.02</div>
   </div>
   <div class="proj-card reveal">
     <div class="proj-label completed">Completed</div>
-    <div class="proj-name">차세대 위협 탐지 시스템을 위한 오픈소스 EDR 기술 분석</div>
-    <div class="proj-meta">국가보안기술연구소(NSR) · 2020.04 — 2020.10</div>
+    <div class="proj-name">Analysis of Open-Source Based EDR for Next Generation Threat Detection Systems</div>
+    <span class="ko" style="margin-top:0;margin-bottom:0.3rem;">차세대 위협 탐지 시스템을 위한 오픈소스 EDR 기술 분석</span>
+    <div class="proj-meta">NSR · 2020.04 — 2020.10</div>
   </div>
   <div class="proj-card reveal">
     <div class="proj-label completed">Completed</div>
-    <div class="proj-name">사물인터넷을 위한 보안성 시각화 기술 연구개발</div>
-    <div class="proj-meta">한국연구재단 · 2019.09 — 2020.05</div>
+    <div class="proj-name">Security Visualization Technology R&D for Internet of Things</div>
+    <span class="ko" style="margin-top:0;margin-bottom:0.3rem;">사물인터넷을 위한 보안성 시각화 기술 연구개발</span>
+    <div class="proj-meta">NRF · 2019.09 — 2020.05</div>
   </div>
+  </div><!-- /completed-projects -->
 </section>
 
 <!-- PATENTS -->
 <section id="patents">
-  <div class="section-head"><h2>Patents</h2><span class="count">Pending 11 · Granted 4</span></div>
+  <div class="section-head"><h2>Patents</h2></div>
 
+  <div class="pub-filters">
+    <button class="pub-filter-btn pending" data-target="pending" onclick="togglePatent(this)">Pending <span class="num">10</span></button>
+    <button class="pub-filter-btn granted" data-target="granted" onclick="togglePatent(this)">Granted <span class="num">4</span></button>
+  </div>
+
+  <div class="pub-group" data-patent="pending">
   <div class="group-label pending">Pending</div>
   <div class="simple-item reveal">I.-G. Lee, <strong>S.-J. Lee</strong>, S.-E. Jeon, "Data transmission/reception method and apparatus based on partial encryption," Korea Patent No. 10-2025-0147671, 2025.10.14</div>
   <div class="simple-item reveal">I.-G. Lee, <strong>S.-J. Lee</strong>, S.-E. Jeon, "Access point management device and method for disaster communication," Korea Patent No. 10-2024-0057012, 2024.04.29</div>
   <div class="simple-item reveal">I.-G. Lee, <strong>S.-J. Lee</strong>, "Apparatus and method for transmitting data frame utilizing interframe space," Korea Patent No. 10-2024-0157433, 2024.11.07</div>
   <div class="simple-item reveal">I.-G. Lee, <strong>S.-J. Lee</strong>, S.-E. Jeon, N.-E. Park, H.-E. Lee, "Smart control apparatus and method," Korea Patent No. 10-2024-0059942, 2024.05.03</div>
   <div class="simple-item reveal">I.-G. Lee, <strong>S.-J. Lee</strong>, S.-E. Jeon, "Jammer defence device and method," Korea Patent No. 10-2024-0045081, 2024.04.03</div>
-  <div class="simple-item reveal">이일구, 길예슬, 전유란, <strong>이선진</strong>, "병렬 이진 분류 메커니즘을 이용한 공격 탐지 방법," Korea Appl. Dec. 2023</div>
-  <div class="simple-item reveal">이일구, 이진민, <strong>이선진</strong>, 김경진, "OTP를 활용한 온오프라인 P2P 인증," Korea Appl. Oct. 2023</div>
-  <div class="simple-item reveal">이일구, 길예슬, 전유란, <strong>이선진</strong>, "적응형 특징 선택 기반의 병렬 이진 분류 메커니즘," Korea Appl. Oct. 2023</div>
+  <div class="simple-item reveal">I.-G. Lee, Y.-S. Kil, Y.-R. Jeon, <strong>S.-J. Lee</strong>, "Attack detection method using parallel binary classification mechanism," Korea Appl. Dec. 2023 <span class="ko-inline">— 병렬 이진 분류 메커니즘을 이용한 공격 탐지 방법</span></div>
+  <div class="simple-item reveal">I.-G. Lee, J.-M. Lee, <strong>S.-J. Lee</strong>, K.-J. Kim, "Online/offline P2P authentication using OTP," Korea Appl. Oct. 2023 <span class="ko-inline">— OTP를 활용한 온오프라인 P2P 인증</span></div>
+  <div class="simple-item reveal">I.-G. Lee, Y.-S. Kil, Y.-R. Jeon, <strong>S.-J. Lee</strong>, "Parallel binary classification mechanism based on adaptive feature selection," Korea Appl. Oct. 2023 <span class="ko-inline">— 적응형 특징 선택 기반의 병렬 이진 분류 메커니즘</span></div>
   <div class="simple-item reveal">I.-G. Lee, Y.-R. Lee, S.-E. Jeon, <strong>S.-J. Lee</strong>, "Method and apparatus for classifying malicious encryption traffic according to noise level," Korea Appl. 10-2022-0154908, Nov. 2022</div>
   <div class="simple-item reveal">I.-G. Lee, S.-E. Jeon, <strong>S.-J. Lee</strong>, Y.-R. Lee, "Method and apparatus for retrieving and evaluating user actions in metaverse," Korea Appl. 10-2022-0036839, Mar. 2022</div>
+  </div>
 
+  <div class="pub-group" data-patent="granted">
   <div class="group-label granted">Granted</div>
   <div class="simple-item reveal">I.-G. Lee, Y.-J. Han, <strong>S.-J. Lee</strong>, S.-M. Choi, "Method and apparatus for secure distributed data processing," Korea Patent No. 10-2437715, Aug. 2022</div>
   <div class="simple-item reveal">J.-M. Lee, <strong>S.-J. Lee</strong>, Y.-R. Lee, "System for monitoring car using blockchain," Korea Patent No. 10-2317937, Oct. 2021</div>
   <div class="simple-item reveal">I.-G. Lee, S.-H. Park, S.-W. Yun, Y.-R. Lee, <strong>S.-J. Lee</strong>, T.-R. Park, H.-Y. Shim, "Drone system and operation method thereof," Korea Patent No. 10-2320573, Oct. 2021</div>
   <div class="simple-item reveal"><strong>S.-J. Lee</strong>, I.-G. Lee, "Method and apparatus for searching sound data," Korea Patent No. 10-2185784, Nov. 2020</div>
+  </div>
 </section>
 
 <!-- EXPERIENCE -->
@@ -495,87 +576,117 @@
   <div class="section-head"><h2>Experience</h2></div>
 
   <div class="group-label sci">Teaching</div>
-  <div class="list-item reveal"><span class="list-year">Spring 2025, 2026</span><div><div class="list-title">Network Security [LB001500]</div><div class="list-sub">성신여자대학교, 서울</div></div></div>
+  <div class="list-item reveal"><span class="list-year">Spring 2025, 2026</span><div><div class="list-title">Network Security [LB001500]</div><div class="list-sub">Sungshin Women's University, Seoul</div></div></div>
 
-  <div class="group-label conf" style="margin-top:2rem;">Working Experience</div>
-  <div class="list-item reveal"><span class="list-year">2024.03 — 08</span><div><div class="list-title">Research Assistant (RA)</div><div class="list-sub">융합보안공학과, 성신여자대학교</div></div></div>
+  <div class="group-label conf" style="margin-top:2rem;">Work</div>
+  <div class="list-item reveal"><span class="list-year">2024.03 — 08</span><div><div class="list-title">Research Assistant (RA)</div><div class="list-sub">Dept. of Convergence Security Engineering, Sungshin University</div></div></div>
   <div class="list-item reveal"><span class="list-year">2024.01</span><div><div class="list-title">Internship</div><div class="list-sub">Newracom, California, United States</div></div></div>
-  <div class="list-item reveal"><span class="list-year">2023.09 — 2024.02</span><div><div class="list-title">Teaching Assistant (TA)</div><div class="list-sub">융합보안공학과, 성신여자대학교</div></div></div>
-  <div class="list-item reveal"><span class="list-year">2021.09 — 2022.09</span><div><div class="list-title">Teaching Assistant (TA)</div><div class="list-sub">융합보안공학과, 성신여자대학교</div></div></div>
-  <div class="list-item reveal"><span class="list-year">2019.03 — 2020.09</span><div><div class="list-title">Undergraduate Internship</div><div class="list-sub">CSE Lab, 성신여자대학교</div></div></div>
+  <div class="list-item reveal"><span class="list-year">2023.09 — 2024.02</span><div><div class="list-title">Teaching Assistant (TA)</div><div class="list-sub">Dept. of Convergence Security Engineering, Sungshin University</div></div></div>
+  <div class="list-item reveal"><span class="list-year">2021.09 — 2022.09</span><div><div class="list-title">Teaching Assistant (TA)</div><div class="list-sub">Dept. of Convergence Security Engineering, Sungshin University</div></div></div>
+  <div class="list-item reveal"><span class="list-year">2019.03 — 2020.09</span><div><div class="list-title">Undergraduate Internship</div><div class="list-sub">CSE Lab, Sungshin University</div></div></div>
 
   <div class="group-label scopus" style="margin-top:2rem;">Professional Activities</div>
-  <div class="simple-item reveal">IEEE 802.11 Forum KR member (2023.03~)</div>
+  <div class="simple-item reveal">IEEE 802.11 Forum KR Member (2023.03 ~)</div>
   <div class="simple-item reveal">Digital Forensics Summer Short-term Education, MIN ENI Inc (2022.07)</div>
-  <div class="simple-item reveal">Student Member, Korea Institute of Information Security & Cryptology (2022.03~2023.03)</div>
-  <div class="simple-item reveal">Student Member, The Korean Association for Industrial Security (2022.01~2023.01)</div>
-  <div class="simple-item reveal">Lab Leader, CSE Lab, 미래융합기술공학과 (2023.09~2024.08)</div>
-  <div class="simple-item reveal">부반대표, 융합보안공학과, 성신여자대학교 (2020.03~2020.12)</div>
-  <div class="simple-item reveal">ConSeQ Club — 홍보팀장 (2019.06~2020.09)</div>
-  <div class="simple-item reveal">Java Book Beta Reader, 한빛아카데미 — '혼자 공부하는 자바' 검수 (2019.03~04)</div>
+  <div class="simple-item reveal">Student Member, Korea Institute of Information Security & Cryptology (2022.03 ~ 2023.03)</div>
+  <div class="simple-item reveal">Student Member, The Korean Association for Industrial Security (2022.01 ~ 2023.01)</div>
+  <div class="simple-item reveal">Lab Leader, CSE Lab, Dept. of Future Convergence Technology Engineering (2023.09 ~ 2024.08)</div>
+  <div class="simple-item reveal">Vice-class Representative, Convergence Security Engineering (2020.03 ~ 2020.12)</div>
+  <div class="simple-item reveal">ConSeQ Club — Public Relations (PR) Team Leader (2019.06 ~ 2020.09)</div>
+  <div class="simple-item reveal">Java Book Beta Reader, Hanbit Academy — '혼자 공부하는 자바' (2019.03 ~ 04)</div>
 
   <div class="group-label amber" style="margin-top:2rem;">Invited Talks</div>
-  <div class="simple-item reveal">2025년도 디지털치료학회 춘계학술대회 심포지엄 연사 발표 — IoT 기기의 디지털 신원관리시스템 (2025.06.13)</div>
+  <div class="simple-item reveal">Symposium Speaker — Digital Identity Management System for IoT Devices<br><span class="ko">2025년도 디지털치료학회 춘계학술대회 심포지엄 연사 발표 (2025.06.13)</span></div>
 </section>
 
 <!-- AWARDS -->
 <section id="awards">
-  <div class="section-head"><h2>Awards</h2><span class="count">32건</span></div>
+  <div class="section-head"><h2>Awards</h2></div>
 
-  <div class="award-item reveal"><span class="award-yr">2024</span><div><div class="award-name">우수신진연구자상</div><div class="award-org">한국과학기술정보연구원(KISTI) 원장상</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2024</span><div><div class="award-name">최우수논문상 — ASK 2024</div><div class="award-org">한국정보기술학술단체총연합회 회장상</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2024</span><div><div class="award-name">우수상 — 융합보안/미래융합기술논문대상</div><div class="award-org">성신여자대학교 지식서비스공과대학장</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2024</span><div><div class="award-name">ICT융합보안 우수크루상</div><div class="award-org">CSCxCSE LAB (멘토: 전소은, 박나은, 이선진, 이일구)</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2024</span><div><div class="award-name">우수논문상 — KIISC CISC-S'24</div><div class="award-org">한국정보보호학회 · 이중 채널을 활용한 물리계층 보안</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2024</span><div><div class="award-name">부채널분석연구회 회장상</div><div class="award-org">오토인코더 기반 LSTM을 활용한 효율적인 이상 탐지 기법</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2024</span><div><div class="award-name">장려상 — ASK 2024</div><div class="award-org">저전력 사물인터넷 통신을 위한 동적 보안 링크 적응 기법</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2023</span><div><div class="award-name">Grand Prize — 산학프로젝트챌린지</div><div class="award-org">한국산업기술보호협회(KAITS) 회장상</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2023</span><div><div class="award-name">Best Paper Award — Mobisec 2023</div><div class="award-org">KISTI 원장상 · 제7회 국제 모바일 인터넷 보안 심포지엄</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2023</span><div><div class="award-name">Bronze Award — 2023 ICT/SW 여성창업경진대회</div><div class="award-org">IT여성기업인협회 회장상</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2023</span><div><div class="award-name">Bronze Award — 산업보안논문경진대회</div><div class="award-org">산업보안연구학회 회장상</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2022</span><div><div class="award-name">Best Paper Award — Mobisec 2022</div><div class="award-org">KISA 원장상 · 제6회 국제 모바일 인터넷 보안 심포지엄</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2022</span><div><div class="award-name">Best Poster Paper Award — WISA 2022</div><div class="award-org">한국정보보호학회(KIISC) 회장상</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2021</span><div><div class="award-name">Bronze Award — 산업보안 연구논문 경진대회</div><div class="award-org">한국산업보안연구학회(KAIS) 회장상</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2021</span><div><div class="award-name">특별상 — 2021 KCSA Conference</div><div class="award-org">한국융합보안학회(KCSA) 회장상</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2021</span><div><div class="award-name">Best Paper Award — KAIS/KAF Joint Conference</div><div class="award-org">한국산업보안연구학회 회장 / 한국포렌식학회 회장</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2021</span><div><div class="award-name">대상 — Made In Sungshin: PBL/Capstone</div><div class="award-org">성신여자대학교</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2021</span><div><div class="award-name">대상 — 학생발명아이디어 경진대회</div><div class="award-org">성신여자대학교</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2021</span><div><div class="award-name">2등 — AI 태양광 발전량 예측 경진대회</div><div class="award-org">INNOPOLIS &amp; 한국원자력연구원(KAERI)</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2020</span><div><div class="award-name">이컨슈머 대표이사상 — 양자암호통신 아이디어 공모전</div><div class="award-org">Econsumer</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2020</span><div><div class="award-name">특별상 — 산업보안논문경진대회</div><div class="award-org">산업보안연구학회</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2020</span><div><div class="award-name">우수상 — 제8회 핀테크 아이디어·논문 공모전</div><div class="award-org">Ground X (과기정통부 &amp; KISA)</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2019</span><div><div class="award-name">장려상 — 지식재산 빅데이터·창업 경진대회</div><div class="award-org">한국특허정보원(KIPI)</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2019</span><div><div class="award-name">우수상 — 전국 암호 경진대회</div><div class="award-org">KISA 원장상</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2019</span><div><div class="award-name">장려상 — 아이디어 해커톤</div><div class="award-org">성신여자대학교 융합보안공학과</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2019</span><div><div class="award-name">은상 — Made In Sungshin 미래형 교양교과 공모전</div><div class="award-org">성신여자대학교</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2019</span><div><div class="award-name">대상 — 제3회 융합보안공학 창의경진대회</div><div class="award-org">성신여자대학교 지식서비스공과대학</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2019</span><div><div class="award-name">최우수상 — 제9회 창업아이디어 경진대회</div><div class="award-org">성신여자대학교</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2019</span><div><div class="award-name">대상 — Python Programming Contest</div><div class="award-org">성신여자대학교</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2018</span><div><div class="award-name">우수상 — Made In Sungshin 에세이 부문</div><div class="award-org">성신여자대학교</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2018</span><div><div class="award-name">대상 — 제2회 융합보안공학 창의경진대회</div><div class="award-org">성신여자대학교 지식서비스공과대학</div></div></div>
-  <div class="award-item reveal"><span class="award-yr">2018</span><div><div class="award-name">Best Idea Award — Digital IT Business Idea Contest</div><div class="award-org">융합보안공학과, 성신여자대학교</div></div></div>
+  <div class="pub-filters">
+    <button class="pub-filter-btn accent" data-target="aw2024" onclick="toggleAward(this)">2024 <span class="num">7</span></button>
+    <button class="pub-filter-btn accent" data-target="aw2023" onclick="toggleAward(this)">2023 <span class="num">4</span></button>
+    <button class="pub-filter-btn accent" data-target="aw2022" onclick="toggleAward(this)">2022 <span class="num">2</span></button>
+    <button class="pub-filter-btn accent" data-target="aw2021" onclick="toggleAward(this)">2021 <span class="num">6</span></button>
+    <button class="pub-filter-btn accent" data-target="aw2020" onclick="toggleAward(this)">2020 <span class="num">3</span></button>
+    <button class="pub-filter-btn accent" data-target="aw2019" onclick="toggleAward(this)">2019 <span class="num">7</span></button>
+    <button class="pub-filter-btn accent" data-target="aw2018" onclick="toggleAward(this)">2018 <span class="num">3</span></button>
+  </div>
+
+  <div class="pub-group" data-award="aw2024">
+  <div class="award-item reveal"><span class="award-yr">2024</span><div><div class="award-name">Outstanding Young Researcher Award</div><div class="award-org">KISTI (Korea Institute of Science and Technology Information)</div><span class="ko">우수신진연구자 한국과학기술정보연구원 원장상</span></div></div>
+  <div class="award-item reveal"><span class="award-yr">2024</span><div><div class="award-name">Best Paper Award — ASK 2024</div><div class="award-org">Federation of Korean Information Technology Societies</div><span class="ko">한국정보기술학술단체총연합회 회장상 · 인터프레임 스페이스 통신을 활용한 저지연 트래픽 전송 기법</span></div></div>
+  <div class="award-item reveal"><span class="award-yr">2024</span><div><div class="award-name">Excellence Award — Convergence Security/Future Convergence Technology Paper</div><div class="award-org">Dean of College of Knowledge-Based Services Engineering, Sungshin University</div><span class="ko">융합보안/미래융합기술논문대상 우수상</span></div></div>
+  <div class="award-item reveal"><span class="award-yr">2024</span><div><div class="award-name">Outstanding Crew Award — ICT Convergence Security</div><div class="award-org">CSCxCSE LAB (Mentors: S.-E. Jeon, N.-E. Park, S.-J. Lee, I.-G. Lee)</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2024</span><div><div class="award-name">Excellence Paper Award — KIISC CISC-S'24</div><div class="award-org">Korea Institute of Information Security & Cryptology</div><span class="ko">안전한 사물인터넷을 위한 이중 채널을 활용한 물리계층 보안</span></div></div>
+  <div class="award-item reveal"><span class="award-yr">2024</span><div><div class="award-name">Side-Channel Analysis Competition Award</div><div class="award-org">Side-Channel Analysis Research Society</div><span class="ko">부채널분석연구회 회장상 · 오토인코더 기반 LSTM을 활용한 효율적인 이상 탐지 기법</span></div></div>
+  <div class="award-item reveal"><span class="award-yr">2024</span><div><div class="award-name">Encouragement Award — ASK 2024</div><div class="award-org">Dynamic Secure Link Adaptation Technique for Low-power IoT Communications</div></div></div>
+  </div>
+
+  <div class="pub-group" data-award="aw2023">
+  <div class="award-item reveal"><span class="award-yr">2023</span><div><div class="award-name">Grand Prize — Industry-Academic Project Challenge</div><div class="award-org">Korea Association for Industrial Technology Security (KAITS)</div><span class="ko">산학프로젝트챌린지 산업보안 부문 대상</span></div></div>
+  <div class="award-item reveal"><span class="award-yr">2023</span><div><div class="award-name">Best Paper Award — Mobisec 2023</div><div class="award-org">KISTI · 7th International Symposium on Mobile Internet Security</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2023</span><div><div class="award-name">Bronze Award — 2023 ICT/SW Women Startup Contest</div><div class="award-org">IT Women Entrepreneurs Association</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2023</span><div><div class="award-name">Bronze Award — Industrial Security Thesis Contest</div><div class="award-org">Industrial Security Research Society</div></div></div>
+  </div>
+
+  <div class="pub-group" data-award="aw2022">
+  <div class="award-item reveal"><span class="award-yr">2022</span><div><div class="award-name">Best Paper Award — Mobisec 2022</div><div class="award-org">KISA · 6th International Symposium on Mobile Internet Security</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2022</span><div><div class="award-name">Best Poster Paper Award — WISA 2022</div><div class="award-org">KIISC · 23rd World Conference on Information Security Applications</div></div></div>
+  </div>
+
+  <div class="pub-group" data-award="aw2021">
+  <div class="award-item reveal"><span class="award-yr">2021</span><div><div class="award-name">Bronze Award — Industrial Security Research Contest</div><div class="award-org">KAIS (Korea Association for Industrial Security)</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2021</span><div><div class="award-name">Special Prize — KCSA Conference 2021</div><div class="award-org">Korea Convergence Security Association</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2021</span><div><div class="award-name">Best Paper Award — KAIS/KAF Joint Conference</div><div class="award-org">KAIS &amp; Korea Association of Forensic</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2021</span><div><div class="award-name">Top Prize — Made In Sungshin: PBL &amp; Capstone Competition</div><div class="award-org">Sungshin University</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2021</span><div><div class="award-name">Grand Prize — Student Invention Idea Contest</div><div class="award-org">Sungshin University</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2021</span><div><div class="award-name">2nd Prize — AI Competition for Prediction of Solar Power Generation</div><div class="award-org">INNOPOLIS &amp; KAERI</div></div></div>
+  </div>
+
+  <div class="pub-group" data-award="aw2020">
+  <div class="award-item reveal"><span class="award-yr">2020</span><div><div class="award-name">Econsumer President Award — Quantum Cryptography Communication Idea Contest</div><div class="award-org">Econsumer</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2020</span><div><div class="award-name">Special Award — Industrial Security Thesis Contest</div><div class="award-org">Industrial Security Research Society</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2020</span><div><div class="award-name">Excellence Award — 8th Fintech Idea and Thesis Contest</div><div class="award-org">Ground X (MSIT &amp; KISA)</div></div></div>
+  </div>
+
+  <div class="pub-group" data-award="aw2019">
+  <div class="award-item reveal"><span class="award-yr">2019</span><div><div class="award-name">Honorable Mention — Intellectual Property Bigdata and Startup Contest</div><div class="award-org">KIPI (Korea Intellectual Patent Information)</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2019</span><div><div class="award-name">Excellence Award — National Crypto Competition</div><div class="award-org">KISA</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2019</span><div><div class="award-name">Encouragement Prize — Idea Hackathon Contest</div><div class="award-org">Convergence Security Engineering, Sungshin University</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2019</span><div><div class="award-name">Silver Prize — Made In Sungshin Future-type Liberal Arts Contest</div><div class="award-org">Sungshin University</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2019</span><div><div class="award-name">Grand Prize — 3rd Convergence Security Engineering Creative Contest</div><div class="award-org">College of Knowledge-based Service Engineering, Sungshin University</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2019</span><div><div class="award-name">Best Excellence — 9th Entrepreneurship Idea Competition</div><div class="award-org">Sungshin University</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2019</span><div><div class="award-name">Grand Prize — Python Programming Contest</div><div class="award-org">Sungshin University</div></div></div>
+  </div>
+
+  <div class="pub-group" data-award="aw2018">
+  <div class="award-item reveal"><span class="award-yr">2018</span><div><div class="award-name">Excellence Prize — Made In Sungshin Essay Category</div><div class="award-org">Sungshin University</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2018</span><div><div class="award-name">Grand Prize — 2nd Convergence Security Engineering Creative Contest</div><div class="award-org">College of Knowledge-based Service Engineering, Sungshin University</div></div></div>
+  <div class="award-item reveal"><span class="award-yr">2018</span><div><div class="award-name">Best Idea Award — Digital IT Business Idea Contest</div><div class="award-org">Dept. of Convergence Security Engineering, Sungshin University</div></div></div>
+  </div>
 </section>
 
 <!-- NEWS -->
 <section id="news">
   <div class="section-head"><h2>News</h2></div>
-  <div class="news-item reveal"><a href="https://www.sungshin.ac.kr/main_kor/14091/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTQwNjQ2JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">융합보안공학과, 미래융합기술공학과 연구팀, SCIE급 우수 논문 연속 발표 (2025.03)</a></div>
-  <div class="news-item reveal"><a href="https://v.daum.net/v/20240619073246709" target="_blank">성신여대 대학원생, SCIE급 저명 학술지 3편 논문 게재 (2024.06)</a></div>
-  <div class="news-item reveal"><a href="https://v.daum.net/v/20240607184602892" target="_blank">성신여대 대학원·학부 연구팀, ASK 2024 최다 수상 (2024.06)</a></div>
-  <div class="news-item reveal"><a href="https://www.hani.co.kr/arti/economy/biznews/1138985.html" target="_blank">이선진 연구원, NetSec KR 2024 우수신진연구자상 수상 (2024)</a></div>
-  <div class="news-item reveal"><a href="https://www.metroseoul.co.kr/article/20230410500084" target="_blank">성신여대, '여성대학원생 공학연구팀제' 전국 최다 6팀 선정 (2023.04)</a></div>
-  <div class="news-item reveal"><a href="https://www.sungshin.ac.kr/main_kor/10941/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTE4ODE3JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">대학원 연구팀, SCI급 국제 학술지 논문 게재 (2023.03)</a></div>
-  <div class="news-item reveal"><a href="https://www.sungshin.ac.kr/main_kor/10941/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTE4ODE2JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">대학원 연구팀, JCR Top 18% SCI급 국제 학술지 게재 (2023.03)</a></div>
-  <div class="news-item reveal"><a href="https://www.sungshin.ac.kr/main_kor/10941/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTE4ODE1JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">Computer Networks (Q1 SCI) 논문 게재 (2023.03)</a></div>
-  <div class="news-item reveal"><a href="https://www.sungshin.ac.kr/main_kor/14091/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTE2MzQ3JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">제6회 국제 모바일 인터넷 보안 심포지엄 최우수 학생논문상 (2022.12)</a></div>
-  <div class="news-item reveal"><a href="https://www.sungshin.ac.kr/cse/11789/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGY3NlJTJGMzQwNyUyRjExMzA3MSUyRmFydGNsVmlldy5kbyUzRg==" target="_blank">국제학술대회 Best Poster Paper Award 수상 (2022.09)</a></div>
-  <div class="news-item reveal"><a href="https://www.sungshin.ac.kr/main_kor/14091/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTA2Mzk4JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">2021 산업보안논문 경진대회 대상 및 동상 3건 수상 (2021.11)</a></div>
-  <div class="news-item reveal"><a href="https://www.boannews.com/media/view.asp?idx=99892" target="_blank">KAIS/KAF 합동학술대회 최우수논문상 수상 (2021.08)</a></div>
-  <div class="news-item reveal"><a href="https://www.hankookilbo.com/News/Read/201909041525028164" target="_blank">특허검색, Smart Search팀 장려상·대상 수상 (2019.09)</a></div>
+  <div class="news-item reveal"><a href="https://www.sungshin.ac.kr/main_kor/14091/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTQwNjQ2JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">Research team publishes consecutive SCIE-level papers (2025.03)</a></div>
+  <div class="news-item reveal"><a href="https://v.daum.net/v/20240619073246709" target="_blank">Graduate student publishes papers in 3 renowned SCIE-level journals (2024.06)</a></div>
+  <div class="news-item reveal"><a href="https://v.daum.net/v/20240607184602892" target="_blank">Research team won the most awards at ASK 2024 (2024.06)</a></div>
+  <div class="news-item reveal"><a href="https://www.hani.co.kr/arti/economy/biznews/1138985.html" target="_blank">Sun-Jin Lee won Outstanding Young Researcher Award at NetSec KR 2024</a></div>
+  <div class="news-item reveal"><a href="https://www.metroseoul.co.kr/article/20230410500084" target="_blank">Sungshin Univ. selected 6 teams for Female Graduate Students Engineering Research Team (2023.04)</a></div>
+  <div class="news-item reveal"><a href="https://www.sungshin.ac.kr/main_kor/10941/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTE4ODE3JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">Graduate students publish papers in SCI-level international journals (2023.03)</a></div>
+  <div class="news-item reveal"><a href="https://www.sungshin.ac.kr/main_kor/10941/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTE4ODE2JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">Research team publishes in JCR Top 18% SCI journal (2023.03)</a></div>
+  <div class="news-item reveal"><a href="https://www.sungshin.ac.kr/main_kor/10941/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTE4ODE1JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">Paper published in Computer Networks, Q1 SCI journal (2023.03)</a></div>
+  <div class="news-item reveal"><a href="https://www.sungshin.ac.kr/main_kor/14091/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTE2MzQ3JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">Best Student Paper Award at 6th Mobisec (2022.12)</a></div>
+  <div class="news-item reveal"><a href="https://www.sungshin.ac.kr/cse/11789/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGY3NlJTJGMzQwNyUyRjExMzA3MSUyRmFydGNsVmlldy5kbyUzRg==" target="_blank">Best Poster Paper Award at international conference (2022.09)</a></div>
+  <div class="news-item reveal"><a href="https://www.sungshin.ac.kr/main_kor/14091/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGbWFpbl9rb3IlMkYzMTkyJTJGMTA2Mzk4JTJGYXJ0Y2xWaWV3LmRvJTNG" target="_blank">Grand Award and three Bronze Awards in 2021 Industrial Security Contest (2021.11)</a></div>
+  <div class="news-item reveal"><a href="https://www.boannews.com/media/view.asp?idx=99892" target="_blank">Best Paper Award at KAIS/KAF Joint Conference (2021.08)</a></div>
+  <div class="news-item reveal"><a href="https://www.hankookilbo.com/News/Read/201909041525028164" target="_blank">Patent Search team won Encouragement Award and Grand Prize (2019.09)</a></div>
 </section>
 
 <footer>
-  <p>&copy; 2026 이선진 (Sun-Jin Lee)</p>
+  <p>&copy; 2026 Sun-Jin Lee</p>
   <div class="footer-links">
     <a href="mailto:220237017@sungshin.ac.kr">Email</a>
     <a href="https://scholar.google.com/citations?user=Z7TX-DcAAAAJ&hl=en" target="_blank">Google Scholar</a>
@@ -584,12 +695,63 @@
 </footer>
 
 <script>
+  function togglePatent(btn) {
+    const target = btn.dataset.target;
+    const group = document.querySelector('.pub-group[data-patent="' + target + '"]');
+    const isOpen = group.classList.contains('open');
+    document.querySelectorAll('.pub-group[data-patent]').forEach(g => g.classList.remove('open'));
+    document.querySelectorAll('#patents .pub-filter-btn').forEach(b => b.classList.remove('active'));
+    if (!isOpen) {
+      group.classList.add('open');
+      btn.classList.add('active');
+      group.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+  }
+
+  function toggleAward(btn) {
+    const target = btn.dataset.target;
+    const group = document.querySelector('.pub-group[data-award="' + target + '"]');
+    const isOpen = group.classList.contains('open');
+    document.querySelectorAll('.pub-group[data-award]').forEach(g => g.classList.remove('open'));
+    document.querySelectorAll('#awards .pub-filter-btn').forEach(b => b.classList.remove('active'));
+    if (!isOpen) {
+      group.classList.add('open');
+      btn.classList.add('active');
+      group.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+  }
+
+  function toggleCompleted(btn) {
+    const group = document.getElementById('completed-projects');
+    const isOpen = group.classList.contains('open');
+    group.classList.toggle('open');
+    btn.classList.toggle('active');
+    if (!isOpen) {
+      group.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+  }
+
+  function togglePub(btn) {
+    const target = btn.dataset.target;
+    const group = document.querySelector('.pub-group[data-group="' + target + '"]');
+    const isOpen = group.classList.contains('open');
+
+    // close all groups and deactivate all buttons
+    document.querySelectorAll('.pub-group').forEach(g => g.classList.remove('open'));
+    document.querySelectorAll('.pub-filter-btn').forEach(b => b.classList.remove('active'));
+
+    // if it wasn't open, open it
+    if (!isOpen) {
+      group.classList.add('open');
+      btn.classList.add('active');
+      // trigger reveal animations inside
+      group.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
     });
   }, { threshold: 0.05 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
