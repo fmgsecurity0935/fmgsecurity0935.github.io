@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #FAFAF7;
+      --bg: #FFFFFF;
       --surface: #FFFFFF;
       --text: #1C1917;
       --text-sub: #57534E;
@@ -41,14 +41,14 @@
       --mono: 'IBM Plex Mono', monospace;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
     ::selection { background: var(--accent); color: #fff; }
 
     .ko { display: block; font-size: 0.78rem; color: var(--text-dim); margin-top: 0.2rem; line-height: 1.5; }
     .ko-inline { font-size: 0.78rem; color: var(--text-dim); }
 
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,250,247,0.88); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.88); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
     .nav-inner { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
     .logo { font-size: 1rem; font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
     nav ul { list-style: none; display: flex; gap: 1.4rem; }
@@ -145,8 +145,9 @@
     .pub-venue { font-size: 0.78rem; color: var(--text-dim); font-style: italic; margin-top: 0.08rem; }
     .pub-if { display: inline-block; font-family: var(--mono); font-size: 0.58rem; color: var(--slate); background: var(--slate-soft); padding: 0.14rem 0.4rem; border-radius: 3px; margin-top: 0.25rem; }
 
-    .proj-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.4rem; margin-bottom: 0.7rem; }
-    .proj-card .proj-label { display: inline-block; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; padding: 0.18rem 0.45rem; border-radius: 4px; margin-bottom: 0.5rem; }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+
+    .proj-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.4rem; margin-bottom: 0.7rem; }    .proj-card .proj-label { display: inline-block; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; padding: 0.18rem 0.45rem; border-radius: 4px; margin-bottom: 0.5rem; }
     .proj-card .proj-label.ongoing { background: var(--teal-soft); color: var(--teal); }
     .proj-card .proj-label.completed { background: var(--slate-soft); color: var(--slate); }
     .proj-name { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.15rem; line-height: 1.5; }
@@ -185,17 +186,30 @@
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity 1.2s ease, transform 1.2s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    @media (max-width: 800px) {
-      .hero { grid-template-columns: 1fr; padding: 8rem 1.5rem 3rem; gap: 1.5rem; }
-      .hero-photo { width: 120px; height: 150px; }
-      section { padding: 3.5rem 1.5rem; }
-      .interests { padding: 0 1.5rem 2.5rem; }
-      .list-item { grid-template-columns: 1fr; gap: 0.15rem; }
-    }
-    @media (max-width: 640px) {
+    /* ===== Tablet & mobile nav: 9 menu items overflow below ~920px, so switch to hamburger early ===== */
+    @media (max-width: 920px) {
       nav ul { display: none; }
       .nav-toggle { display: block; }
-      nav ul.open { display: flex; flex-direction: column; position: absolute; top: 56px; left: 0; right: 0; background: rgba(250,250,247,0.97); backdrop-filter: blur(16px); padding: 1.2rem 2rem; gap: 1rem; border-bottom: 1px solid var(--border); }
+      nav ul.open { display: flex; flex-direction: column; position: absolute; top: 56px; left: 0; right: 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); padding: 1.2rem 2rem; gap: 1rem; border-bottom: 1px solid var(--border); }
+      nav ul.open a { font-size: 0.88rem; display: block; padding: 0.2rem 0; }
+    }
+
+    @media (max-width: 800px) {
+      .nav-inner { padding: 0 1.25rem; }
+      .hero { grid-template-columns: 1fr; padding: 6.5rem 1.25rem 2rem; gap: 1.5rem; }
+      .hero-photo { width: 120px; height: 150px; }
+      section { padding: 2rem 1.25rem; }
+      .interests { padding: 0 1.25rem 1.5rem; }
+      .list-item { grid-template-columns: 1fr; gap: 0.15rem; }
+      .skills-grid { grid-template-columns: 1fr; }
+      footer { padding: 2.5rem 1.25rem 3rem; }
+    }
+    @media (max-width: 640px) {
+      .section-head h2 { font-size: 1.2rem; }
+      /* filter pills: slightly tighter so 6-7 buttons wrap into neat rows */
+      .pub-filters.horizontal { gap: 0.35rem; }
+      .pub-filters.horizontal .pub-filter-btn { padding: 0.4rem 0.75rem; font-size: 0.74rem; }
+      .pub-filter-btn { padding: 0.65rem 1rem; }
       footer { flex-direction: column; gap: 1rem; text-align: center; }
     }
   </style>
@@ -324,7 +338,7 @@
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-head"><h2>Skills</h2></div>
-  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0.8rem;">
+  <div class="skills-grid">
     <div style="border:1px solid var(--border); border-radius:10px; padding:1.2rem; background:var(--surface);">
       <div style="font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; color:var(--accent); margin-bottom:0.8rem; padding-bottom:0.5rem; border-bottom:1px solid var(--border);">Languages</div>
       <div style="font-size:0.86rem; color:var(--text-sub); line-height:2;">Python · C · MATLAB</div>
@@ -433,8 +447,8 @@
 <section id="publications">
   <div class="section-head"><h2>Publications</h2></div>
 
-  <div class="pub-filters">
-    <button class="pub-filter-btn sci" data-target="sci" onclick="togglePub(this)">SCI / SCIE <span class="num">12</span></button>
+  <div class="pub-filters horizontal">
+    <button class="pub-filter-btn sci active" data-target="sci" onclick="togglePub(this)">SCI / SCIE <span class="num">12</span></button>
     <button class="pub-filter-btn scopus" data-target="scopus" onclick="togglePub(this)">SCOPUS <span class="num">2</span></button>
     <button class="pub-filter-btn kci" data-target="kci" onclick="togglePub(this)">KCI <span class="num">4</span></button>
     <button class="pub-filter-btn conf" data-target="conf" onclick="togglePub(this)">Conferences <span class="num">26</span></button>
@@ -442,7 +456,7 @@
     <button class="pub-filter-btn review" data-target="review" onclick="togglePub(this)">Under Review <span class="num">4</span></button>
   </div>
 
-  <div class="pub-group" data-group="sci">
+  <div class="pub-group open" data-group="sci">
   <div class="group-label sci">SCI / SCIE Journals</div>
 
   <div class="pub-item reveal">
@@ -661,7 +675,7 @@
   <div class="section-head"><h2>Awards</h2></div>
 
   <div class="pub-filters horizontal">
-    <button class="pub-filter-btn accent" data-target="aw2024" onclick="toggleAward(this)">2024</button>
+    <button class="pub-filter-btn accent active" data-target="aw2024" onclick="toggleAward(this)">2024</button>
     <button class="pub-filter-btn accent" data-target="aw2023" onclick="toggleAward(this)">2023</button>
     <button class="pub-filter-btn accent" data-target="aw2022" onclick="toggleAward(this)">2022</button>
     <button class="pub-filter-btn accent" data-target="aw2021" onclick="toggleAward(this)">2021</button>
@@ -670,7 +684,7 @@
     <button class="pub-filter-btn accent" data-target="aw2018" onclick="toggleAward(this)">2018</button>
   </div>
 
-  <div class="pub-group" data-award="aw2024">
+  <div class="pub-group open" data-award="aw2024">
   <div class="award-item reveal"><span class="award-yr">2024</span><div><div class="award-name">Outstanding Young Researcher Award</div><div class="award-org">KISTI (Korea Institute of Science and Technology Information)</div><span class="ko">우수신진연구자 한국과학기술정보연구원 원장상</span></div></div>
   <div class="award-item reveal"><span class="award-yr">2024</span><div><div class="award-name">Best Paper Award — ASK 2024</div><div class="award-org">Federation of Korean Information Technology Societies</div><span class="ko">한국정보기술학술단체총연합회 회장상 · 인터프레임 스페이스 통신을 활용한 저지연 트래픽 전송 기법</span></div></div>
   <div class="award-item reveal"><span class="award-yr">2024</span><div><div class="award-name">Excellence Award — Convergence Security/Future Convergence Technology Paper</div><div class="award-org">Dean of College of Knowledge-Based Services Engineering, Sungshin University</div><span class="ko">융합보안/미래융합기술논문대상 우수상</span></div></div>
@@ -829,14 +843,11 @@
   function toggleAward(btn) {
     const target = btn.dataset.target;
     const group = document.querySelector('.pub-group[data-award="' + target + '"]');
-    const isOpen = group.classList.contains('open');
     document.querySelectorAll('.pub-group[data-award]').forEach(g => g.classList.remove('open'));
     document.querySelectorAll('#awards .pub-filter-btn').forEach(b => b.classList.remove('active'));
-    if (!isOpen) {
-      group.classList.add('open');
-      btn.classList.add('active');
-      group.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-    }
+    group.classList.add('open');
+    btn.classList.add('active');
+    group.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
   }
 
   function toggleCompleted(btn) {
@@ -852,19 +863,16 @@
   function togglePub(btn) {
     const target = btn.dataset.target;
     const group = document.querySelector('.pub-group[data-group="' + target + '"]');
-    const isOpen = group.classList.contains('open');
 
-    // close all groups and deactivate all buttons
-    document.querySelectorAll('.pub-group').forEach(g => g.classList.remove('open'));
-    document.querySelectorAll('.pub-filter-btn').forEach(b => b.classList.remove('active'));
+    // close only publication groups and deactivate only publication buttons
+    document.querySelectorAll('.pub-group[data-group]').forEach(g => g.classList.remove('open'));
+    document.querySelectorAll('#publications .pub-filter-btn').forEach(b => b.classList.remove('active'));
 
-    // if it wasn't open, open it
-    if (!isOpen) {
-      group.classList.add('open');
-      btn.classList.add('active');
-      // trigger reveal animations inside
-      group.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-    }
+    // always keep the clicked tab open
+    group.classList.add('open');
+    btn.classList.add('active');
+    // trigger reveal animations inside
+    group.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
   }
 
   const observer = new IntersectionObserver((entries) => {
